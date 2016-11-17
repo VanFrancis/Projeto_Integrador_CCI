@@ -1,0 +1,50 @@
+• INDEX
+	- Video institucional 
+	- telefone fixo 
+	- Eventos 
+	- Textos Modais - Atividades
+	
+• CAD_IDOSO >>SOCORROOOOO<<
+	- Layout 
+	    - Formulário: ok
+	    
+	- Funcionalidade 
+• CAD_ATIVIDADE
+	- Layout: OK 
+	- Validação: OK 
+	- Funcionalidade: 
+	    - Cadastro: ok
+• FREQUENCIA
+	- Layout 
+	- Funcionalidade:
+	    - Alterar: não funciona
+	    - Excluir: não funciona
+• LISTA_AITIVIDADE
+	- Layout: ok
+	- Funcionalidade 
+• LISTA_CADASTRO 
+	- Layout 
+	- Funcionalidade:
+	     - Alterar: não funciona
+	     - Excluir: não funciona
+• LISTA_EVENTO 
+	- Layout: ok
+	- Funcionalidade:
+	     - Alterar: não funciona
+	     - Excluir: não funciona
+• LISTA_FRENQUENCIA
+	- Layout 
+	- Funcionalidade 
+• LOGIN 
+	- Layout: OK 
+	- Funcionalidade: OK
+	    - Falta restringir o acesso 
+• RELATORIO
+	- Layout 
+	- Funcionalidade 
+-----------------------------------------------------------------------------------------------
+COMANDO BANCO DE DADOS
+- phpmyadmin-ctl install
+    Username: mrsans
+
+
