@@ -509,7 +509,7 @@
           <div class="modal-body">
              <!--GRUPO IDENTIFICAÇÃO-->
   					<fieldset>
-  					  <legend>Identificação</legend>
+  					  <legend>IdentifiCação</legend>
   						<div class="row">
   							<div class="form-group col-lg-5">
   								<label class="control-label" for="exampleInputEmail1">Nome Completo: </label>
