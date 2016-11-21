@@ -23,8 +23,6 @@
 				$cidade=$_POST['cidade'];
 				$uf=$_POST['uf'];
 				
-				
-				
 				if (!$conn) 
 					die ("Erro de Conexão".mysql_error());
 				$query = "INSERT INTO tb_idoso (`id_idoso`,`nome`,`sexo`,`nacionalidade`,`cpf`,`emissor`,`trabalha`,`telefone`,`estado_civil`,`endereco`,`numero`,`bairro`,`cep`,`cidade`,`uf`) VALUES ('NULL', '$nome','$nome','$sexo','$data_nascimento','$nacionalidade','$cpf','$trabalha','$telefone','$estado_civil','$endereco','$numero','$bairro','$cep','$cidade','$uf')"; 	

@@ -18,7 +18,6 @@
           <div class="modal-header">
               <img src="../img/Logo_X.png" class="col-lg-offset-4">
           </div>
-
           <div class="modal-body">
               <form class="form col-md-12 center-block" action="config/validacao.php" method="post">
                 <div class="form-group">
@@ -33,7 +32,7 @@
                 <strong><p class="text-center text-danger">
   								<?php
   									if(isset($_SESSION['loginErro'])){
-  										echo $_SESSION['loginErro'];
+  										  echo $_SESSION['loginErro'];
   										unset($_SESSION['loginErro']);
   									}
   								?>

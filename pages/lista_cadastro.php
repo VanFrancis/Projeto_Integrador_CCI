@@ -1,3 +1,6 @@
+<?php 
+	require'config/conexao.php';
+ ?>
 <html>
   <head>
     <?php include('config/head.php'); ?>
@@ -50,16 +53,17 @@
         </div>
       </div>
     </div>
-          <!--FUNÇÃO ALTERAR-->
-    //   	<?php
-  		// 	//GET id passada pela lista
-  		// 	$id=$_GET["id"];
-  		// 	//Faz consulta para achar os dados a partir do id
-  		// 	$consulta1=mysql_query("SELECT *FROM tb_idoso where id_idoso='".$id."'") 
-  		// 	or die (mysql_error());
-  		// 	//Pegando os dados apartir da consulta
-  		// 	$dados1 = mysql_fetch_array($consulta1);
-  		// 	?>
+    <?php include('config/rodape.php'); ?>
+    <!--FUNÇÃO ALTERAR-->
+      	<?php
+  			//GET id passada pela lista
+  			$id=$_GET["id"];
+  			//Faz consulta para achar os dados a partir do id
+  			$consulta1=mysql_query("SELECT *FROM tb_idoso where id_idoso='".$id."'") 
+  			or die (mysql_error());
+  			//Pegando os dados apartir da consulta
+  			$dados1 = mysql_fetch_array($consulta1);
+  	 	?>
       <!-- Modal Alterar -->
         <div class="modal fade modal-alterar" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-lg">
@@ -509,81 +513,81 @@
           <div class="modal-body">
              <!--GRUPO IDENTIFICAÇÃO-->
   					<fieldset>
-  					  <legend>IdentifiCação</legend>
+  					  <legend>Identificação</legend>
   						<div class="row">
-  							<div class="form-group col-lg-5">
+  							<div class="form-group col-lg-4">
   								<label class="control-label" for="exampleInputEmail1">Nome Completo: </label>
-  				         <label>João Joaquim Ferreira</label>
-  							</div>
-  							<div class="form-group col-lg-3">
-  								<label class="control-label"  for="exampleInputPassword1">Data Nascimento</label>
-  				        <label>12/03/1932</label>
+  				         <span>João Joaquim Ferreira</span>
   							</div>
   							<div class="form-group col-lg-4">
-  								<label>Sexo</label>
-  				        <label>Masculino</label>
+  								<label class="control-label"  for="exampleInputPassword1">Data Nascimento:</label>
+  				        <span>12/03/1932</span>
+  							</div>
+  							<div class="form-group col-lg-4">
+  								<label>Sexo:</label>
+  				        <span>Masculino</span>
   							</div>
   						</div>	<!--FIM LINHA-->
   						<div class="row">
   							<div class="form-group col-lg-4">
-  				        <label>Religião</label>
-  				        <label>Católico</label>
+  				        <label>Religião:</label>
+  				        <span>Católico</span>
   				      </div>
   							<div class="form-group col-lg-4">
   								<label>UF:</label>
-                  <label>RO</label>
+                  <span>RO</span>
   							</div>
   							<div class="form-group col-lg-4">
-  								<label>Nacionalidade</label>
-  								<label>Brasileiro</label>
+  								<label>Nacionalidade:</label>
+  								<span>Brasileiro</span>
   							</div>
   						</div>
   						<div class="row">
   							<div class="form-group col-lg-4">
-  								<label>CPF</label>
-  								<label>000.000.000-00</label>
+  								<label>CPF:</label>
+  								<span>000.000.000-00</span>
   							</div>
   							<div class="form-group col-lg-4">
-  								<label>RG</label>
-  								<label>00000000</label>
+  								<label>RG:</label>
+  								<span>00000000</span>
   							</div>
   							<div class="form-group col-lg-4">
-  								<label>Emissor</label>
-  								<label>SSP/RO</label>
+  								<label>Emissor:</label>
+  								<span>SSP/RO</span>
   							</div>
   						</div>
   						<div class="row">
-  							<div class="form-group col-lg-6">
-  								<label>Endereço</label>
-  								<label>Av. Rio de Janeiro</label>
-  							</div>
-  							<div class="form-group col-lg-2">
-  								<label>Nº</label>
-  								<label>1234</label>
+  							<div class="form-group col-lg-4">
+  								<label>Endereço:</label>
+  								<span>Av. Rio de Janeiro</span>
   							</div>
   							<div class="form-group col-lg-4">
-  								<label>Bairro</label>
-  								<label>Bairro Velho</label>
+  								<label>Nº:</label>
+  								<span>1234</span>
+  							</div>
+  							<div class="form-group col-lg-4">
+  								<label>Bairro:</label>
+  								<span>Bairro Velho</span>
   							</div>
   						</div>
   						<div class="row">
-  							<div class="form-group col-lg-2">
+  							<div class="form-group col-lg-4">
   								<label>Trabalha?</label>
-  								<label>Não</label>
+  								<span>Sim</span>
   							</div>
-  						  <div class="form-group col-lg-10">
+  						  <div class="form-group col-lg-4">
   				      	<label>Onde? </label>
-  								<label>Sacoleiro</label>
+  								<span>Sacoleiro</span>
   							</div>
   						</div>
   						<div class="row">
-  							<div class="form-group col-lg-6">
-  								<label for="exampleInputEmail1">Telefone</label>
-  								<label>69 0000-0000</label>
+  							<div class="form-group col-lg-4">
+  								<label for="exampleInputEmail1">Telefone:</label>
+  								<span>69 0000-0000</span>
   							</div>
-  							<div class="form-group col-lg-6">
-  								<label for="exampleInputEmail1">Celular</label>
-  								<label>69 0 0000-0000</label>
+  							<div class="form-group col-lg-4">
+  								<label for="exampleInputEmail1">Celular:</label>
+  								<span>69 0 0000-0000</span>
   							</div>
   						</div>
   					</fieldset>
@@ -592,33 +596,192 @@
   					  <legend>Contato de Emergência</legend>
   						<div class="row">
   				  	  <div class="form-group col-lg-4">
-  								<label for="exampleInputEmail1">Nome</label>
-  								<label>Maria Fernandes</label>
+  								<label for="exampleInputEmail1">Nome:</label>
+  								<span>Maria Fernandes</span>
   							</div>
   							<div class="form-group col-lg-4">
-  								<label for="exampleInputEmail1">Parentesco</label>
-  								<label>Filha</label>
+  								<label for="exampleInputEmail1">Parentesco:</label>
+  								<span>Filha</span>
   							</div>
   							<div class="form-group col-lg-4">
-  								<label for="exampleInputEmail1">Telefone</label>
-  								<label>69 0000-0000</label>
+  								<label for="exampleInputEmail1">Telefone:</label>
+  								<span>69 0000-0000</span>
   							</div>
   						</div>
   						<div class="row">
   				  	  <div class="form-group col-lg-4">
   								<label for="exampleInputEmail1">Nome</label>
-  								<label>Felipe Fernandes</label>
+  								<span>Felipe Fernandes</span>
   							</div>
   							<div class="form-group col-lg-4">
-  								<label for="exampleInputEmail1">Parentesco</label>
-  								<label>Filho</label>
+  								<label for="exampleInputEmail1">Parentesco:</label>
+  								<span>Filho</span>
   							</div>
   							<div class="form-group col-lg-4">
-  								<label for="exampleInputEmail1">Telefone</label>
-  								<label>69 0000-0000</label>
+  								<label for="exampleInputEmail1">Telefone:</label>
+  								<span>69 0000-0000</span>
   							</div>
   						</div>
   	  			</fieldset>
+  	  			<!--GRUPO INFROMAÇÕES DE SAUDE-->
+  					<fieldset>
+  				  	<legend>Informações de Saúde</legend>
+  				  	<div class="row">
+  							<div class="form-group col-lg-12">
+  				    		<label for="exampleInputEmail1">Informações de Saúde</label>
+  								<span>Diabetes,Hipertensão e Tabagista</span>
+  			      	</div>
+  				  	</div>
+  				  	<div class="row">
+  				  		<div class="form-group col-lg-12">
+  								<label for="exampleInputEmail1">Medicação de uso contínuo:</label>
+  								<span>Remédios de Pressão Alta</span>
+  							</div>
+  				  	</div>
+  				  	<div class="row">
+  				  		<div class="form-group col-lg-5">
+  								<label for="exampleInputEmail1">Alérgico a:</label>
+  								<span>Gatos</span>
+  							</div>
+  							<div class="form-group col-lg-5">
+  								<label for="exampleInputEmail1">Outras Enfermidades?</label>
+  								<span>Pressão Alta</span>
+  							</div>
+  				  	</div>
+  				  	<div class="row">
+  				  		<div class="form-group col-lg-5">
+  								<label for="exampleInputEmail1">Possui plano de saúde?</label>
+  							   <span>Sim</span>
+  							</div>
+  							<div class="form-group col-lg-5">
+  			      		<label>Deixar Invisivel</label>
+  								<span>Unimed</span>
+  							</div>
+  				  	</div>
+  				  </fieldset>
+  				  <!--GRUPO INFORMAÇÕES ADICIONAIS-->
+  					<fieldset>
+  				  	<legend>Informações Adicionais</legend>
+  				  	<div class="row">
+  				    	<div class="form-group col-lg-5">
+  								<label for="exampleInputEmail1">Estado Civil</label>
+  								<span>Casado, Solteiro</span>
+  							</div>
+  							<div class="form-group col-lg-5">
+  								<label for="exampleInputEmail1">Nível de Renda</label>
+  								<span>Sem Renda</span>
+  							</div>
+  							<div class="form-group col-lg-5">
+  								<label for="exampleInputEmail1">Origem da Renda</label>
+  								<span>Trabalho Remunerado, Pensão</span>
+  							</div>
+  							<div class="form-group col-lg-5">
+  								<label for="exampleInputEmail1">Nível de Instrução</label>
+  								<span>Alfabetizado, Não Alfabetizado</span>
+  							</div>
+  				  	</div>
+  				  	<hr>
+  				  	<div class="row">
+  				  		<div class="form-group col-lg-5">
+  								<label for="exampleInputEmail1">Como Reside</label>
+  								<span>Casa de Familiares, Casa de Terceiros</span>
+  							</div>
+  							<div class="form-group col-lg-5">
+  			      		<label for="exampleInputEmail1">Deixar Invisivel</label>
+  								<span>Hotel</span>
+  							</div>
+  							<div class="form-group col-lg-10">
+  								<label for="exampleInputEmail1">Com quem Reside</label>
+  								<span>Casa de Familiares, Casa de Terceiros</span>
+  							</div>
+  				  	</div>
+  				  	<hr>
+  				  	<div class="row">
+  				  		<div class="form-group col-lg-2">
+  			      		<label for="exampleInputEmail1">Crianças</label>
+  								<span>2</span>
+  							</div>
+  							<div class="form-group col-lg-3">
+  			      		<label for="exampleInputEmail1">Adolescente</label>
+  								<span>1</span>
+  							</div>
+  							<div class="form-group col-lg-3">
+  			      		<label for="exampleInputEmail1">Adulto</label>
+  								<span>3</span>
+  							</div>
+  							<div class="form-group col-lg-2">
+  			      		<label for="exampleInputEmail1">Idoso</label>
+  								<span>3</span>
+  							</div>
+  							<div class="form-group col-lg-2">
+  			      		<label for="exampleInputEmail1">Total</label>
+  								<span>9</span>
+  							</div>
+  				  	</div>
+  				  </fieldset>
+  				  <!--GRUPO PARTICIPAÇÃO DA VIDA FAMILIAR E SOCIAL-->
+  				  <fieldset>
+  				  	<legend>Participação da Vida Familiar e Social</legend>
+  				  	<div class="row">
+  				    	<div class="form-group col-lg-6">
+  								<label for="exampleInputEmail1">Participar das atividades domésticas?</label>
+  								<span>Raramente, Nunca</span>
+  							</div>
+  							<div class="form-group col-lg-6">
+  			      		<label for="exampleInputEmail1">Quais as tarefas executadas?</label>
+  								<span>Caminhar</span>
+  							</div>
+  						</div>
+  						<div class="row">
+  							<div class="form-group col-lg-6">
+  								<label for="exampleInputEmail1">Participa de outro Grupo ou Associação?</label>
+  								<span>Sim</span>
+  							</div>
+  							<div class="form-group col-lg-6">
+  			      		<label for="exampleInputEmail1">Deixar Invisivel</label>
+  								<span>Casa do Ansião</span>
+  							</div>
+  				  	</div>
+  				 	</fieldset>
+  				 		<!--GRUPO ASPECTOS PSICOLOGICOS-->
+  				 	<fieldset>
+  			  	  <legend>Aspectos Psicológicos</legend>
+  			  	  <div class="row">
+  			  	    <div class="form-group col-lg-5">
+  			  	      <label for="exampleInputEmail1">Doenças Psicológicas</label>
+  							  <span>Depressão, Ansiedade</span>
+  							</div>
+  			      	<div class="form-group col-lg-6">
+  			      	  <label for="exampleInputEmail1">Deixar Invisivel</label>
+  								<span>Outros</span>
+  							</div>
+  			  	  </div>
+  				 	</fieldset>
+  	 				<!--GRUPO INTERESSSES E PREFERENCIAS-->
+  				 	<fieldset>
+  			  	  <legend>Interesses e Preferências</legend>
+  			  	  <div class="row">
+  			  	    <div class="form-group col-lg-5">
+  			  	    	<label for="exampleInputEmail1">Atividade Física</label>
+  				    		<span>Ioga, Natação</span>
+  			      	</div>
+  			      	<div class="form-group col-lg-6">
+  			      		<label for="exampleInputEmail1">Deixar Invisivel</label>
+  								<span>Outros</span>
+  							</div>
+  			  	  </div>
+  			  	  <hr>
+  			  	  <div class="row">
+  			  	  	 <div class="form-group col-lg-5">
+  			  	    	<label for="exampleInputEmail1">Atividade Sócio-Educativas</label>
+  			  	    	<span>Dança, Teatro</span>
+  			        	</div>
+  			      	<div class="form-group col-lg-6">
+  			      		<label for="exampleInputEmail1">Deixar Invisivel</label>
+  								<span>Outros</span>
+  							</div>
+  			  	  </div>
+  				 	</fieldset>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
@@ -626,6 +789,7 @@
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
+    
     
     <!-- Modal Excluir -->
     <div class="modal fade modal-excluir" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -647,7 +811,7 @@
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
-    <?php include('config/rodape.php'); ?>
+
   </body>
    <?php include('config/scripts.php'); ?>
 </html>
