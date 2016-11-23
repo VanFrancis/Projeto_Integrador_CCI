@@ -777,8 +777,8 @@
   			  	    	<span>Dança, Teatro</span>
   			        	</div>
   			      	<div class="form-group col-lg-6">
-  			      		<label for="exampleInputEmail1">Deixar Invisivel</label>
-  								<span>Outros</span>
+  			      		<label for="exampleInputEmail1">Outro</label>
+  								<span>Sapatiado</span>
   							</div>
   			  	  </div>
   				 	</fieldset>

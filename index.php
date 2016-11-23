@@ -161,8 +161,6 @@
         </div>
     </section>
     
-   
-
     <!-- About Section -->
     <section class="success" id="about">
         <div class="container">
@@ -194,7 +192,7 @@
             </div>
             <div class="row">
                 <?php
-			        $query = mysql_query("SELECT * FROM tb_atividade WHERE tipo_atividade='Evento' ORDER BY data_inicio ASC") or die (mysql_error());
+			        $query = mysql_query("SELECT * FROM tb_atividade WHERE tipo_atividade='Evento' ORDER BY data_inicio ASC LIMIT 8 ") or die (mysql_error());
 			        while ($array = mysql_fetch_array($query)){
     			        $nome = $_POST['nome'];
   						$data_inicio = $_POST['data_inicio'];
@@ -204,19 +202,18 @@
             			$descricao = $_POST['descricao'];
 			        }
         	?>
-            	<div class="col-xs-4">
-        			<div class="well well-sm">
-        				<dl>
-        				  <dt><?php echo $array['nome']; ?></dt>
-        				  <dd><?php echo date('d/m/Y', strtotime($array['data_inicio']));  ?></dd>
-        				  <dt><?php echo $array['descricao']; ?></dt>
-        				</dl>		
-        			</div>		
-    		    </div>
-        	</div>  
+		    <div class="col-xs-3">
+    			<div class="well well-sm" style="background-color: #18bc9c">
+    				<dl style="color: #fff">
+    				  <dt class="text-center"><h4><?php echo $array['nome']; ?> Reveillon CCI</h4></dt>
+    				  <dd>Data: <?php echo date('d/m/Y', strtotime($array['data_inicio']));  ?></dd>
+    				  <dd>Horário: <?php echo $array['hora_inicio']; ?>19:00</dd>
+    				  <dd><?php echo $array['descricao']; ?>Festa de fim de ano do CCI</dd>
+    				</dl>		
+    			</div>		
+		    </div>
         </div>
     </section>
-
     <!-- Contact Section -->
     <section class="success" id="contact">
         <div class="container">
@@ -310,18 +307,9 @@
                             <img src="img/portfolio/cabin.png" class="img-responsive img-centered" alt="">
                             <p>A ginástica na terceira idade pode trazer vários benefícios para a saúde como aumento da densidade óssea, fortalecimento dos músculos, aumento da resistência, melhora dos reflexos, diminuição de infecções, fortalecimento dos músculos das pernas, braços e costas, redução das dores no corpo, além do controle da diabetes, artrite, artrose, problemas cardíacos e do colesterol alto muito comum nesta fase da vida.</p>
                             <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                </li>
+                                <li><strong>Professor(a): </strong>Patrícia </li>
+                                <li><strong>Dias: </strong> Segunda</li>
+                                <li><strong>Horário:</strong> 08:00 - 09:30</li>
                             </ul>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Fechar</button>
                         </div>
@@ -351,18 +339,9 @@
                             motora; Libera endorfina, combatendo males como estresse e ansiedade; Ajuda no equilíbrio e fortifica as pernas; Faz bem para 
                             a autoestima; Combate a depressão; Estimula o convívio social, melhorando a timidez;</p>
                             <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                </li>
+                                <li><strong>Professor(a): </strong>Patrícia </li>
+                                <li><strong>Dias: </strong> Quarta - Sexta</li>
+                                <li><strong>Horário:</strong> 08:00 - 10:00</li>
                             </ul>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Fechar</button>
                         </div>
@@ -391,18 +370,9 @@
                             da água é maior que a do ar, a prática de exercícios de hidroginástica em piscina resulta em um trabalho maior do corpo,
                             melhorando a resistência muscular, a capacidade cardiorrespiratória e a circulação sanguínea</p>
                             <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                </li>
+                                <li><strong>Professor(a): </strong>Leandro </li>
+                                <li><strong>Dias: </strong> Terça a Sexta</li>
+                                <li><strong>Horário:</strong> 16:00 - 18:00</li>
                             </ul>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Fechar</button>
                         </div>
@@ -432,18 +402,9 @@
                             em piscina resulta em um trabalho maior do corpo, melhorando a resistência muscular, a capacidade cardiorrespiratória 
                             e a circulação sanguínea</p>
                             <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                </li>
+                                <li><strong>Professor(a): </strong>Joabe </li>
+                                <li><strong>Dias: </strong> Terça e Sexta</li>
+                                <li><strong>Horário:</strong> 09:00</li>
                             </ul>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Fechar</button>
                         </div>
@@ -474,18 +435,9 @@
                             objeto (dominó) verificada em pesquisa com o grupo de estudo selecionado. A analise dos dados obtidos subsidiou também 
                             a formulação de parâmetros para o projeto e a produção de outros jogos voltados ao público idoso.</p>
                             <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                </li>
+                                <li><strong>Professor(a): </strong>Patrícia </li>
+                                <li><strong>Dias: </strong> Segunda a Sexta</li>
+                                <li><strong>Horário:</strong> 14:00 - 16:00</li>
                             </ul>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Fechar</button>
                         </div>
@@ -514,18 +466,9 @@
                             plenitude, extraindo dela o melhor. Somente assim, na soma das experiências e oportunidades, ao final dos seus 
                             anos guardará a jovialidade de um homem sábio. Se você é idoso, guarde a esperança de nunca ficar velho.</p>
                             <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                </li>
+                                <li><strong>Professor(a): </strong>Patrícia </li>
+                                <li><strong>Dias: </strong> Terça</li>
+                                <li><strong>Horário:</strong> 08:00 - 09:30</li>
                             </ul>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Fechar</button>
                         </div>

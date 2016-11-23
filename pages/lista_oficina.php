@@ -43,6 +43,7 @@
                 			$hora_inicio = $_POST['hora_inicio'];
                 			$dia_semana = $_POST['dia_semanaa'];
                 			$descricao = $_POST['descricao'];
+                			$teste = $_POST['id_atividade'];
       					 	?>
       							<tr>
       								<td>
@@ -81,8 +82,9 @@
     	<?php
 			//GET id passada pela lista
 			$id=$_GET["id"];
+      die(var_dump($id));
 			//Faz consulta para achar os dados a partir do id
-			$consulta1=mysql_query("SELECT *FROM tb_atividade where id_atividade='".$id."'") 
+			$consulta1=mysql_query("SELECT * FROM tb_atividade where id_atividade='".$id."'") 
 			or die (mysql_error());
 			//Pegando os dados apartir da consulta
 			$dados1 = mysql_fetch_array($consulta1);

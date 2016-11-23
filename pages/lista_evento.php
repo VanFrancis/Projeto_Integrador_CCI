@@ -60,7 +60,8 @@
       									<?php echo $array['descricao']; ?>
       								</td>
       								<td class="text-center">
-      										<button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target=".modal-alterar" href="#?id=<?=($array['id_atividade']);?>" aria-label="Left Align">
+      									
+      									<button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target=".modal-alterar" href="#?id=<?=($array['id_atividade']);?>" aria-label="Left Align">
                         <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Alterar</button>
                         <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target=".modal-excluir" name="excluir"  href="#.php?id=<?=($array['id_atividade']);?>" aria-label="Left Align">
                         <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Excluir</button>

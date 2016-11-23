@@ -12,7 +12,7 @@
     <div class="collapse navbar-collapse" id="navbar-ex-collapse">
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <a href="frequencia.php">Pricipal</a>
+          <a href="frequencia.php">Principal</a>
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Frequência<span class="caret"></span></a>
@@ -40,7 +40,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Atividades<span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li>
-              <a href="cad_atividade.php">Novo Atividade</a>
+              <a href="cad_atividade.php">Nova Atividade</a>
             </li>
             <li>
               <a href="lista_oficina.php">Listar Oficinas</a>
