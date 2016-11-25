@@ -7,6 +7,18 @@
   </head>
   <body>
       <?php include('config/menu.php'); ?>
+      	<?php
+			//GET id passada pela lista
+			$id=$_GET["id"];
+			//die(var_dump($id));
+			//Faz consulta para achar os dados a partir do id
+			$consulta1=mysql_query("SELECT *FROM tb_atividade where id_atividade='".$id."'") 
+			or die (mysql_error());
+			//Pegando os dados apartir da consulta
+			$dados1 = mysql_fetch_array($consulta1);
+			echo $dados1;
+		//die(var_dump($dados1));
+			?>
       <div class="section">
         <div class="container">
         <div class="row">
@@ -23,6 +35,7 @@
             <table class="table table table-hover table-condensed table-bordered">
             <thead>
               <tr class="text-center">
+                 <th class="text-center">#</th>
                 <th class="text-center">Atividades</th>
                 <th class="text-center">Data Início - Data Fim</th>
                 <th class="text-center">Horário</th>
@@ -34,16 +47,14 @@
             <tbody>
               <tr>
                 <?php 
+                  $cont = 1;
       						$query = mysql_query("SELECT * FROM tb_atividade WHERE tipo_atividade='Evento' ORDER BY data_inicio ASC") or die (mysql_error());
       							while ($array = mysql_fetch_array($query)){
-      								$nome = $_POST['nome'];
-      								$data_inicio = $_POST['data_inicio'];
-                			$data_fim = $_POST['data_fim'];
-                			$hora_inicio = $_POST['hora_inicio'];
-                			$dia_semana = $_POST['dia_semanaa'];
-                			$descricao = $_POST['descricao'];
       					 	?>
       							<tr>
+      							  	<td>
+      									<?php echo $cont ?>
+      								</td>
       								<td>
       									<?php echo $array['nome']; ?>
       								</td>
@@ -58,15 +69,40 @@
       								</td>
       								<td>
       									<?php echo $array['descricao']; ?>
+    									<!-- Modal Excluir -->
+                      <div class="modal fade modal-excluir<?php echo $cont; ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" > 
+                     
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span></button>
+                            <h3 class="modal-title">Excluir Evento</h3>
+                          </div>
+            
+                          <div class="modal-body">
+                            <p>Você tem certeza que deseja excluir?</p>
+                          </div>
+                          <div class="modal-footer">
+                            <form method="POST" action="config/exclui_atividade.php">
+                              <button type="submit" name="botaoConfirma" value="<?php echo $array['id_atividade'] ?>" class="btn btn-danger">Excluir</button>
+                              <button type="button" class="btn btnn-default" data-dismiss="modal">Fechar</button>
+                            </form>
+                          </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                      </div><!-- /.modal -->
+   
       								</td>
+      								
       								<td class="text-center">
       									
-      									<button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target=".modal-alterar" href="#?id=<?=($array['id_atividade']);?>" aria-label="Left Align">
+      									<button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target=".modal-alterar" href="?id=<?=($array['id_atividade']);?>" aria-label="Left Align">
                         <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Alterar</button>
-                        <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target=".modal-excluir" name="excluir"  href="#.php?id=<?=($array['id_atividade']);?>" aria-label="Left Align">
+                        <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target=".modal-excluir<?php echo $cont; ?>" name="excluir"  href="#.php?id=<?=($array['id_atividade']);?>" aria-label="Left Align">
                         <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Excluir</button>
       								</td>
       							</tr> <?php  
+      							$cont++;
       							} ?>
                   </tr>
             </tbody>
@@ -77,18 +113,9 @@
     </div>
      <!--LINK RODAPE-->
     <?php include('config/rodape.php'); ?>
+   
     <!--FUNÇÃO ALTERAR-->
-    	<?php
-			//GET id passada pela lista
-			$id=$_GET["id"];
-			//Faz consulta para achar os dados a partir do id
-			$consulta1=mysql_query("SELECT *FROM tb_atividade where id_atividade='".$id."'") 
-			or die (mysql_error());
-			//Pegando os dados apartir da consulta
-			$dados1 = mysql_fetch_array($consulta1);
-			echo $dados1;
-		// 	die(var_dump($dados1));
-			?>
+    
     <!-- Modal Alterar -->
       <div class="modal fade modal-alterar" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
@@ -101,7 +128,7 @@
               
             </div>
           <div class="modal-body">
-             <form role="form" action="config/fun_altera_atividade.php" method="post">
+             <form role="form" action="config/altera_atividade.php" method="post">
             <div class="form-group">
               <label for="basic-url">Tipo de Atividade</label>
               <div class="form-group required">
@@ -175,27 +202,6 @@
             <button type="button" class="btn btn-primary" value="<?=($dados1['id_atividade']);?>" name="alterar">Alterar</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
           </div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-    
-    <!-- Modal Excluir -->
-    <div class="modal fade modal-excluir" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span></button>
-          <h3 class="modal-title">Excluir Evento</h3>
-        </div>
-        <div class="modal-body">
-          <p>Você tem certeza que deseja excluir?</p>
-        </div>
-        <div class="modal-footer">
-          <form method="POST">
-            <button type="button" name="botaoConfirma" value="<?php echo $dlt ?>" class="btn btn-danger">Excluir</button>
-            <button type="button" class="btn btnn-default" data-dismiss="modal">Fechar</button>
-          </form>
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->

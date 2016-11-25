@@ -14,6 +14,7 @@
 		$dia_semanaa=$semana_string;
 		//die(var_dump($dia_semanaa[0]));
 		$descricao = $_POST['descricao'];
+		
 	mysql_query("UPDATE tb_atividade SET
 		tipo_atividade='".$tipo_atividade."',
 		nome='".$nome."',

@@ -8,6 +8,7 @@
             include('conexao.php');
         
         	if(isset($_POST["cadastrar"])){
+        		
 				$tipo_atividade = $_POST['tipo_atividade'];
 				$nome = $_POST['nome'];
 				$data_inicio = $_POST['data_inicio'];
@@ -27,13 +28,15 @@
 					die ("Erro de Conexão".mysql_error());
 				$query = "INSERT INTO tb_atividade (`id_atividade`,`tipo_atividade`,`nome`,`data_inicio`,`data_fim`,`hora_inicio`,`hora_fim`,`dia_semanaa`,`descricao`) VALUES ('NULL', '$tipo_atividade','$nome','$data_inicio','$data_fim','$hora_inicio','$hora_fim','$dia_semanaa','$descricao')"; 	
 				if(!mysql_query($query,$conn)) die(mysql_error());
+				
+				$con_id= mysql_query("SELECT MAX(id_atividade) FROM tb_atividade")or die (mysql_error());;
 			}
 			
 			if($tipo_atividade=="Oficina"){
-				header("location:../lista_oficina.php");
+				header("location:../lista_oficina.php?id=$con_id");
 			}
 			else 
-				header("location:../lista_evento.php");
+				header("location:../lista_evento.php?id=$con_id");
 		    ?>
     </body>
 </html>

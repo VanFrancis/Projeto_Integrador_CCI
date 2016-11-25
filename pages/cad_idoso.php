@@ -38,7 +38,7 @@
 							</div>
 						</div>	<!--FIM LINHA-->
 						<div class="row">
-							<div class="form-group col-lg-4">
+							<div class="form-group col-lg-3">
 				        <label>Religião</label>
 				        <select class="form-control" required="">
 				          <option value="" selected="true" disabled="disabled">Selecione...</option>
@@ -50,8 +50,8 @@
 				          <option value="Sem religião">Sem religião</option>
 				        </select>
 				      </div>
-							<div class="form-group col-lg-4">
-								<label>UF</label>
+						<div class="form-group col-lg-2">
+							<label>UF</label>
 				        <select class="form-control" required="">
 				          <option value="" selected="true" disabled="disabled">Selecione...</option>
 				          <option value="AC">AC</option>
@@ -80,15 +80,19 @@
 				          <option value="SE">SE</option>
 				          <option value="TO">TO</option>
 				        </select>
-							</div>
+						</div>
 							<div class="form-group col-lg-4">
-								<label for="exampleInputEmail1">Nacionalidade</label>
+								<label>Cidade</label>
+								<input type="text" class="form-control"  placeholder="Cidade">
+							</div>
+							<div class="form-group col-lg-3">
+								<label>Nacionalidade</label>
 								<input type="text" class="form-control"  placeholder="Nacionalidade">
 							</div>
-						</div>
+					</div>
 						<div class="row">
 							<div class="form-group col-lg-4">
-								<label for="exampleInputEmail1">CPF</label>
+								<label>CPF</label>
 								<input type="text" class="form-control" placeholder="000.000.000 - 00">
 							</div>
 							<div class="form-group col-lg-4">
@@ -143,21 +147,7 @@
 					<fieldset>
 					  <legend>Contato de Emergência</legend>
 						<div class="row">
-				  	  <div class="form-group col-lg-4">
-								<label for="exampleInputEmail1">Nome</label>
-								<input type="text" class="form-control" placeholder="Nome">
-							</div>
 							<div class="form-group col-lg-4">
-								<label for="exampleInputEmail1">Parentesco</label>
-								<input type="text" class="form-control" placeholder="Parentesco">
-							</div>
-							<div class="form-group col-lg-4">
-								<label for="exampleInputEmail1">Telefone</label>
-								<input type="text" class="form-control" placeholder="Telefone">
-							</div>
-						</div>
-						<div class="row">
-				  	  <div class="form-group col-lg-4">
 								<label for="exampleInputEmail1">Nome</label>
 								<input type="text" class="form-control" placeholder="Nome">
 							</div>
@@ -215,10 +205,10 @@
 			          	<option value="Não">Não</option>
 			         	</select>
 							</div>
-							<div class="form-group col-lg-9">
-			      		<label>Deixar Invisivel</label>
-								<input type="text" class="form-control" placeholder="Onde?">
-							</div>
+						<div class="form-group col-lg-9">
+			      			<label>Deixar Invisivel</label>
+							<input type="text" class="form-control" placeholder="Onde?">
+						</div>
 				  	</div>
 				  </fieldset>
 				  <!--GRUPO INFORMAÇÕES ADICIONAIS-->
@@ -298,29 +288,10 @@
 			          	<option value="Com familiares">Com terceiros</option>
 			         	</select>
 							</div>
-				  	</div>
-				  	<hr>
-				  	<div class="row">
-				  		<div class="form-group col-lg-2">
-			      		<label>Crianças</label>
-								<input type="text" class="form-control" placeholder="Crianças">
-							</div>
-							<div class="form-group col-lg-3">
-			      		<label>Adolescente</label>
-								<input type="text" class="form-control" placeholder="Adolescente">
-							</div>
-							<div class="form-group col-lg-3">
-			      		<label>Adulto</label>
-								<input type="text" class="form-control" placeholder="Adulto">
-							</div>
-							<div class="form-group col-lg-2">
-			      		<label>Idoso</label>
-								<input type="text" class="form-control" placeholder="Idoso">
-							</div>
-							<div class="form-group col-lg-2">
-			      		<label>Total</label>
-								<input type="text" class="form-control" placeholder="Total">
-							</div>
+						<div class="form-group col-lg-9">
+			      			<label>Quantidade de pessoas</label>
+							<input type="text" class="form-control" placeholder="Quantidade">
+						</div>
 				  	</div>
 				  </fieldset>
 				  <!--GRUPO PARTICIPAÇÃO DA VIDA FAMILIAR E SOCIAL-->

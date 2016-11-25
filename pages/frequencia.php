@@ -1,8 +1,8 @@
 <?php session_start(); ?>
-<?php
-$query = "SELECT nome, cpf FROM tb_idoso  WHERE nome='".$_GET['buscar']."'";
-if(!empty($_GET["cpf"])){
-	$query .= " OR nome LIKE '%".$_GET['nome']."%'";
+  <?php
+  $query = "SELECT nome, cpf FROM tb_idoso  WHERE nome='".$_GET['buscar']."'";
+  if(!empty($_GET["cpf"])){
+  	$query .= " OR nome LIKE '%".$_GET['nome']."%'";
 }
 
 ?>

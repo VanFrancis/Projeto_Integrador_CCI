@@ -610,7 +610,7 @@
   						</div>
   						<div class="row">
   				  	  <div class="form-group col-lg-4">
-  								<label for="exampleInputEmail1">Nome</label>
+  								<label for="exampleInputEmail1">Nome:</label>
   								<span>Felipe Fernandes</span>
   							</div>
   							<div class="form-group col-lg-4">
@@ -628,7 +628,7 @@
   				  	<legend>Informações de Saúde</legend>
   				  	<div class="row">
   							<div class="form-group col-lg-12">
-  				    		<label for="exampleInputEmail1">Informações de Saúde</label>
+  				    		<label for="exampleInputEmail1">Informações de Saúde:</label>
   								<span>Diabetes,Hipertensão e Tabagista</span>
   			      	</div>
   				  	</div>
@@ -654,7 +654,7 @@
   							   <span>Sim</span>
   							</div>
   							<div class="form-group col-lg-5">
-  			      		<label>Deixar Invisivel</label>
+  			      		<label>Outros:</label>
   								<span>Unimed</span>
   							</div>
   				  	</div>
@@ -664,57 +664,57 @@
   				  	<legend>Informações Adicionais</legend>
   				  	<div class="row">
   				    	<div class="form-group col-lg-5">
-  								<label for="exampleInputEmail1">Estado Civil</label>
+  								<label for="exampleInputEmail1">Estado Civil:</label>
   								<span>Casado, Solteiro</span>
   							</div>
   							<div class="form-group col-lg-5">
-  								<label for="exampleInputEmail1">Nível de Renda</label>
+  								<label for="exampleInputEmail1">Nível de Renda:</label>
   								<span>Sem Renda</span>
   							</div>
   							<div class="form-group col-lg-5">
-  								<label for="exampleInputEmail1">Origem da Renda</label>
+  								<label for="exampleInputEmail1">Origem da Renda:</label>
   								<span>Trabalho Remunerado, Pensão</span>
   							</div>
   							<div class="form-group col-lg-5">
-  								<label for="exampleInputEmail1">Nível de Instrução</label>
+  								<label for="exampleInputEmail1">Nível de Instrução:</label>
   								<span>Alfabetizado, Não Alfabetizado</span>
   							</div>
   				  	</div>
   				  	<hr>
   				  	<div class="row">
-  				  		<div class="form-group col-lg-5">
-  								<label for="exampleInputEmail1">Como Reside</label>
+  				  		<div class="form-group col-lg-6">
+  								<label for="exampleInputEmail1">Como Reside:</label>
   								<span>Casa de Familiares, Casa de Terceiros</span>
   							</div>
   							<div class="form-group col-lg-5">
-  			      		<label for="exampleInputEmail1">Deixar Invisivel</label>
+  			      		<label for="exampleInputEmail1">Outros:</label>
   								<span>Hotel</span>
   							</div>
   							<div class="form-group col-lg-10">
-  								<label for="exampleInputEmail1">Com quem Reside</label>
+  								<label for="exampleInputEmail1">Com quem Reside:</label>
   								<span>Casa de Familiares, Casa de Terceiros</span>
   							</div>
   				  	</div>
   				  	<hr>
   				  	<div class="row">
   				  		<div class="form-group col-lg-2">
-  			      		<label for="exampleInputEmail1">Crianças</label>
+  			      		<label for="exampleInputEmail1">Crianças:</label>
   								<span>2</span>
   							</div>
   							<div class="form-group col-lg-3">
-  			      		<label for="exampleInputEmail1">Adolescente</label>
+  			      		<label for="exampleInputEmail1">Adolescente:</label>
   								<span>1</span>
   							</div>
   							<div class="form-group col-lg-3">
-  			      		<label for="exampleInputEmail1">Adulto</label>
+  			      		<label for="exampleInputEmail1">Adulto:</label>
   								<span>3</span>
   							</div>
   							<div class="form-group col-lg-2">
-  			      		<label for="exampleInputEmail1">Idoso</label>
+  			      		<label for="exampleInputEmail1">Idoso:</label>
   								<span>3</span>
   							</div>
   							<div class="form-group col-lg-2">
-  			      		<label for="exampleInputEmail1">Total</label>
+  			      		<label for="exampleInputEmail1">Total:</label>
   								<span>9</span>
   							</div>
   				  	</div>
@@ -738,7 +738,7 @@
   								<span>Sim</span>
   							</div>
   							<div class="form-group col-lg-6">
-  			      		<label for="exampleInputEmail1">Deixar Invisivel</label>
+  			      		<label for="exampleInputEmail1">Outros:</label>
   								<span>Casa do Ansião</span>
   							</div>
   				  	</div>
@@ -748,12 +748,12 @@
   			  	  <legend>Aspectos Psicológicos</legend>
   			  	  <div class="row">
   			  	    <div class="form-group col-lg-5">
-  			  	      <label for="exampleInputEmail1">Doenças Psicológicas</label>
+  			  	      <label for="exampleInputEmail1">Doenças Psicológicas:</label>
   							  <span>Depressão, Ansiedade</span>
   							</div>
   			      	<div class="form-group col-lg-6">
-  			      	  <label for="exampleInputEmail1">Deixar Invisivel</label>
-  								<span>Outros</span>
+  			      	  <label for="exampleInputEmail1">Outros:</label>
+  								<span>Dem</span>
   							</div>
   			  	  </div>
   				 	</fieldset>
@@ -762,22 +762,22 @@
   			  	  <legend>Interesses e Preferências</legend>
   			  	  <div class="row">
   			  	    <div class="form-group col-lg-5">
-  			  	    	<label for="exampleInputEmail1">Atividade Física</label>
+  			  	    	<label for="exampleInputEmail1">Atividade Física:</label>
   				    		<span>Ioga, Natação</span>
   			      	</div>
   			      	<div class="form-group col-lg-6">
-  			      		<label for="exampleInputEmail1">Deixar Invisivel</label>
-  								<span>Outros</span>
+  			      		<label for="exampleInputEmail1">Outros:</label>
+  								<span>Andar de bike</span>
   							</div>
   			  	  </div>
   			  	  <hr>
   			  	  <div class="row">
   			  	  	 <div class="form-group col-lg-5">
-  			  	    	<label for="exampleInputEmail1">Atividade Sócio-Educativas</label>
+  			  	    	<label for="exampleInputEmail1">Atividade Sócio-Educativas:</label>
   			  	    	<span>Dança, Teatro</span>
   			        	</div>
   			      	<div class="form-group col-lg-6">
-  			      		<label for="exampleInputEmail1">Outro</label>
+  			      		<label for="exampleInputEmail1">Outros:</label>
   								<span>Sapatiado</span>
   							</div>
   			  	  </div>

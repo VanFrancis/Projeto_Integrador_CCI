@@ -43,6 +43,7 @@
                 			$hora_inicio = $_POST['hora_inicio'];
                 			$dia_semana = $_POST['dia_semanaa'];
                 			$descricao = $_POST['descricao'];
+                			$id_atv = $_POST['id_atividade'];
                 			$teste = $_POST['id_atividade'];
       					 	?>
       							<tr>
@@ -99,6 +100,7 @@
                 <span aria-hidden="true">&times;</span>
               </button>
               <h3 class="modal-title">Alterar Oficina</h3>
+              
             </div>
           <div class="modal-body">
              <form role="form" action="config/fun_altera_atividade.php" method="post">
@@ -145,18 +147,10 @@
               	<label for="basic-url">Dias da Semana</label>
     						<div class="form-group required">
     							<label class="checkbox-inline">
-    						    	<input type="checkbox"  value="Seg" name="dia_semanaa[]" 
-    						    	<?php
-        								if($dados1['dia_semanaa[]']=="Seg"){
-        									echo 'checked';
-      								}?>>Evento>Segunda-Feira
+    						    	<input type="checkbox"  value="Seg" name="dia_semanaa[]">Segunda-Feira
     						    </label>
     						    <label class="checkbox-inline">
-    						      	<input type="checkbox" value="Ter" name="dia_semanaa[]"
-    						      	 <?php
-            								if($dados1['dia_semanaa[]']=="Ter"){
-            									echo 'checked';
-          								}?>>Terça-Feira
+    						      	<input type="checkbox" value="Ter" name="dia_semanaa[]">Terça-Feira
     						    </label>
     						    <label class="checkbox-inline">
     						      	<input type="checkbox" value="Qua" name="dia_semanaa[]">Quarta-Feira
@@ -179,21 +173,22 @@
           </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" name="descricao">Salvar</button>
+            <!--<input type="hidden" id="id_atividade" name="id_atividade" value="<?=($dados1['id_atividade']);?>" />	-->
+            <button type="button" class="btn btn-primary" value="<?=($dados1['id_atividade']);?>" name="alterar">Alterar</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
           </div>
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
     
-    <!-- Modal Excluir -->
+     <!-- Modal Excluir -->
     <div class="modal fade modal-excluir" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span></button>
-          <h3 class="modal-title">Excluir Oficina</h3>
+          <h3 class="modal-title">Excluir Evento</h3>
         </div>
         <div class="modal-body">
           <p>Você tem certeza que deseja excluir?</p>
