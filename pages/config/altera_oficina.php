@@ -30,5 +30,5 @@
 		or die (mysql_error());
 		mysql_close($conn);
 		
-		header("location:../lista_evento.php");
+		header("location:../lista_oficina.php");
 ?>

@@ -194,15 +194,9 @@
                 <?php
 			        $query = mysql_query("SELECT * FROM tb_atividade WHERE tipo_atividade='Evento' ORDER BY data_inicio ASC LIMIT 8 ") or die (mysql_error());
 			        while ($array = mysql_fetch_array($query)){
-    			        $nome = $_POST['nome'];
-  						$data_inicio = $_POST['data_inicio'];
-            			$data_fim = $_POST['data_fim'];
-            			$hora_inicio = $_POST['hora_inicio'];
-            			$dia_semana = $_POST['dia_semanaa'];
-            			$descricao = $_POST['descricao'];
-			        }
-        	?>
-		    <div class="col-xs-3">
+
+            			?>	
+            			<div class="col-xs-3">
     			<div class="well well-sm" style="background-color: #18bc9c">
     				<dl style="color: #fff">
     				  <dt class="text-center"><h4><?php echo $array['nome']; ?> Reveillon CCI</h4></dt>
@@ -212,6 +206,8 @@
     				</dl>		
     			</div>		
 		    </div>
+			        <?php }
+			        ?>
         </div>
     </section>
     <!-- Contact Section -->

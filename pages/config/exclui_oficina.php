@@ -11,7 +11,7 @@
 		mysql_query("DELETE FROM tb_atividade WHERE id_atividade='".$id_atividade."'");
 		mysql_close($conn);
 		
-		header("location:../lista_evento.php");
+		header("location:../lista_oficina.php");
 		
 //	}
 ?>
