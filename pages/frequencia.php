@@ -48,7 +48,7 @@
 							  echo "</strong></div>";
 						?>
       	    <?php }
-							else{
+							else if(isset($_SESSION['msg'])){
 							  echo "<div class='alert alert-success alert-dismissible fade in'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a><strong>";
 								  echo $_SESSION['msg'];
 								unset($_SESSION['msg']);

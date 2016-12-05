@@ -31,12 +31,14 @@
 				$telefone_contato = $_POST['telefone_contato'];
 				/*Informações saúde*/
 				$doenca_string="";
-				foreach ($_POST['doenca'] as $item) {
+				if($_POST['doenca']){
+					foreach ($_POST['doenca'] as $item) {
 					$doenca_string.=$item.',';
-				}
+					}
 				$doenca_string = trim($doenca_string, ",");
-				
 				$doenca=$doenca_string;
+				}
+				
 				//die(var_dump($doenca[0]));
 				
 		

@@ -1,5 +1,5 @@
 <?php
-	// funcao que organiza data-dia no botão
+	// funcao que organiza data-dia no botï¿½o
 	function organiza_dias_botao ($string) 
 	{
 	   $dias = array();
@@ -22,6 +22,13 @@
    }
    
    function formata_data ($string) {
+   
+   $temp = explode("/", $string);
+   $resultado = $temp[2] . '-' . $temp[1] . '-' . $temp[0];
+   return $resultado;
+   }
+   
+   function formata_data_novo ($string) {
    
    $temp = explode("/", $string);
    $resultado = $temp[2] . '-' . $temp[1] . '-' . $temp[0];
