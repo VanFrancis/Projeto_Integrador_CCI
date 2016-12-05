@@ -21,7 +21,7 @@
               <a href="frequencia.php">Nova Frenquência</a>
             </li>
             <li>
-              <a href="lista_frenquecia.php">Listar Frenquência</a>
+              <a href="lista_frequencia.php">Listar Frenquência</a>
             </li>
           </ul>
         </li>
@@ -54,7 +54,7 @@
           <a href="relatorio.php">Relatórios</a>
         </li>
         <li>
-          <a href="login.php">Sair</a>
+          <a href="config/sair.php">Sair</a>
         </li>
       </ul>
     </div>

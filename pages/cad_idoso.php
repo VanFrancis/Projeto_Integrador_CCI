@@ -1,6 +1,7 @@
 <html>
   <head>
-    <?php include('config/head.php'); ?>
+    <?php include('config/head.php');
+    require'config/verifica.php';?>
   </head>
   <body>
     <?php include('config/menu.php'); ?>
@@ -15,131 +16,131 @@
     </div>
     <div class="section">
       <div class="container">
-        <form role="form">
+        <form role="form" action="config/salva_idoso.php" method="POST">
         	<!--GRUPO IDENTIFICAÇÃO-->
 					<fieldset>
 					  <legend>Identificação</legend>
 						<div class="row">
 							<div class="form-group col-lg-5">
-								<label class="control-label" for="exampleInputEmail1">Nome Completo</label>
-				        <input class="form-control" name="nome" placeholder="Nome Completo" type="text">
+								<label class="control-label">Nome Completo</label>
+				        		<input class="form-control" name="nome" placeholder="Nome Completo" type="text">
 							</div>
 							<div class="form-group col-lg-3">
-								<label class="control-label"  for="exampleInputPassword1">Data Nascimento</label>
-				        <input class="form-control" name="data_nascimento" type="date">
+								<label class="control-label">Data Nascimento</label>
+				        		<input class="form-control" name="data_nascimento" type="date">
 							</div>
 							<div class="form-group col-lg-4">
 								<label>Sexo</label>
-				        <select class="form-control" required="">
-				          <option value="" selected="true" disabled="disabled">Selecione...</option>
-				          <option value="Feminino">Feminino</option>
-				          <option value="Masculino">Masculino</option>
-				        </select>
+						        <select class="form-control" name="sexo">
+						          <option value="" selected="true" disabled="disabled">Selecione...</option>
+						          <option value="Feminino">Feminino</option>
+						          <option value="Masculino">Masculino</option>
+						        </select>
 							</div>
 						</div>	<!--FIM LINHA-->
 						<div class="row">
 							<div class="form-group col-lg-3">
-				        <label>Religião</label>
-				        <select class="form-control" required="">
-				          <option value="" selected="true" disabled="disabled">Selecione...</option>
-				          <option value="Católico">Católico</option>
-				          <option value="Evangélico">Evangélico</option>
-				          <option value="Protestante">Protestante</option>
-				          <option value="Católico">Espirita</option>
-				          <option value="Outra religião">Outra religião</option>
-				          <option value="Sem religião">Sem religião</option>
-				        </select>
-				      </div>
-						<div class="form-group col-lg-2">
-							<label>UF</label>
-				        <select class="form-control" required="">
-				          <option value="" selected="true" disabled="disabled">Selecione...</option>
-				          <option value="AC">AC</option>
-				          <option value="AL">Al</option>
-				          <option value="AP">AP</option>
-				          <option value="AM">AM</option>
-				          <option value="BA">BA</option>
-				          <option value="CE">CE</option>
-				          <option value="DF">DF</option>
-				          <option value="ES">ES</option>
-				          <option value="GO">GO</option>
-				          <option value="MA">MA</option>
-				          <option value="MT">MT</option>
-				          <option value="MS">MS</option>
-				          <option value="MG">MG</option>
-				          <option value="PA">PA</option>
-				          <option value="PB">PB</option>
-				          <option value="PE">PE</option>
-				          <option value="RJ">RJ</option>
-				          <option value="RN">RN</option>
-				          <option value="RS">RS</option>
-				          <option value="RO">RO</option>
-				          <option value="RR">RR</option>
-				          <option value="SC">SC</option>
-				          <option value="SP">SP</option>
-				          <option value="SE">SE</option>
-				          <option value="TO">TO</option>
-				        </select>
-						</div>
+						        <label>Religião</label>
+						        <select class="form-control" name ="religiao">
+						          <option value="" selected="true" disabled="disabled">Selecione...</option>
+						          <option value="Católico">Católico</option>
+						          <option value="Evangélico">Evangélico</option>
+						          <option value="Protestante">Protestante</option>
+						          <option value="Católico">Espirita</option>
+						          <option value="Outra religião">Outra religião</option>
+						          <option value="Sem religião">Sem religião</option>
+						        </select>
+				      		</div>
+							<div class="form-group col-lg-2">
+								<label>UF</label>
+						        <select class="form-control" name="uf">
+						          	<option value="" selected="true" disabled="disabled">Selecione...</option>
+						          	<option value="AC">AC</option>
+									<option value="AL">Al</option>
+									<option value="AP">AP</option>
+									<option value="AM">AM</option>
+									<option value="BA">BA</option>
+									<option value="CE">CE</option>
+									<option value="DF">DF</option>
+									<option value="ES">ES</option>
+									<option value="GO">GO</option>
+									<option value="MA">MA</option>
+									<option value="MT">MT</option>
+									<option value="MS">MS</option>
+									<option value="MG">MG</option>
+									<option value="PA">PA</option>
+									<option value="PB">PB</option>
+									<option value="PE">PE</option>
+									<option value="RJ">RJ</option>
+									<option value="RN">RN</option>
+									<option value="RS">RS</option>
+									<option value="RO">RO</option>
+									<option value="RR">RR</option>
+									<option value="SC">SC</option>
+									<option value="SP">SP</option>
+									<option value="SE">SE</option>
+									<option value="TO">TO</option>
+						        </select>
+							</div>
 							<div class="form-group col-lg-4">
 								<label>Cidade</label>
-								<input type="text" class="form-control"  placeholder="Cidade">
+								<input type="text" name="cidade" class="form-control"  placeholder="Cidade">
 							</div>
 							<div class="form-group col-lg-3">
 								<label>Nacionalidade</label>
-								<input type="text" class="form-control"  placeholder="Nacionalidade">
+								<input type="text" name ="nacionalidade" class="form-control"  placeholder="Nacionalidade">
 							</div>
-					</div>
+						</div>
 						<div class="row">
 							<div class="form-group col-lg-4">
 								<label>CPF</label>
-								<input type="text" class="form-control" placeholder="000.000.000 - 00">
+								<input type="text" name="cpf" class="form-control" placeholder="000.000.000 - 00">
 							</div>
 							<div class="form-group col-lg-4">
-								<label for="exampleInputEmail1">RG</label>
+								<label>RG</label>
 								<input type="text" class="form-control" placeholder="RG">
 							</div>
 							<div class="form-group col-lg-4">
-								<label for="exampleInputEmail1">Emissor</label>
-								<input type="text" class="form-control" placeholder="Emissor">
+								<label>Emissor</label>
+								<input type="text" name ="emissor" class="form-control" placeholder="Emissor">
 							</div>
 						</div>
 						<div class="row">
 							<div class="form-group col-lg-6">
-								<label for="exampleInputEmail1">Endereço</label>
-								<input type="text" class="form-control" placeholder="Endereço">
+								<label>Endereço</label>
+								<input type="text" name="endereco" class="form-control" placeholder="Endereço">
 							</div>
 							<div class="form-group col-lg-2">
-								<label for="exampleInputEmail1">Nº</label>
-								<input type="text" class="form-control" placeholder="Numero">
+								<label>Nº</label>
+								<input type="text" name="numero" class="form-control" placeholder="Numero">
 							</div>
 							<div class="form-group col-lg-4">
-								<label for="exampleInputEmail1">Bairro</label>
-								<input type="text" class="form-control" placeholder="Bairro">
+								<label>Bairro</label>
+								<input type="text" name="bairro" class="form-control" placeholder="Bairro">
 							</div>
 						</div>
 						<div class="row">
 							<div class="form-group col-lg-2">
 								<label>Trabalha?</label>
-								<select class="form-control" required="">
+						<select class="form-control" name="trabalha">
 				          <option value="" selected="true" disabled="disabled">Selecione...</option>
 				          <option value="Sim">Sim</option>
 				          <option value="Não">Não</option>
 				         </select>
 							</div>
 						  <div class="form-group col-lg-10">
-				      	<label>Deixar Invisivel</label>
-								<input type="text" class="form-control" placeholder="Onde?">
+				      	<label>Onde?</label>
+								<input type="text" name="trab_onde" class="form-control" placeholder="Onde?">
 							</div>
 						</div>
 						<div class="row">
 							<div class="form-group col-lg-6">
 								<label for="exampleInputEmail1">Telefone</label>
-								<input type="text" class="form-control" placeholder="Telefone">
+								<input type="text" name="telefone" class="form-control" placeholder="Telefone">
 							</div>
 							<div class="form-group col-lg-6">
 								<label for="exampleInputEmail1">Celular</label>
-								<input type="text" class="form-control" placeholder="Celular">
+								<input type="text" name="celular" class="form-control" placeholder="Celular">
 							</div>
 						</div>
 					</fieldset>
@@ -149,15 +150,15 @@
 						<div class="row">
 							<div class="form-group col-lg-4">
 								<label for="exampleInputEmail1">Nome</label>
-								<input type="text" class="form-control" placeholder="Nome">
+								<input type="text" name="nome_contato" class="form-control" placeholder="Nome">
 							</div>
 							<div class="form-group col-lg-4">
 								<label for="exampleInputEmail1">Parentesco</label>
-								<input type="text" class="form-control" placeholder="Parentesco">
+								<input type="text"name="parentesco" class="form-control" placeholder="Parentesco">
 							</div>
 							<div class="form-group col-lg-4">
 								<label for="exampleInputEmail1">Telefone</label>
-								<input type="text" class="form-control" placeholder="Telefone">
+								<input type="text" name="telefone_contato" class="form-control" placeholder="Telefone">
 							</div>
 						</div>
 	  			</fieldset>
@@ -167,47 +168,47 @@
 				  	<div class="row">
 							<div class="form-group col-lg-12">
 				    		<label class="checkbox-inline">
-			          	<input type="checkbox" value="Diabetes" name="tipo_ati">Diabetes
+			          	<input type="checkbox" value="Diabetes" name="doenca[]">Diabetes
 			        	</label>
 			        	<label class="checkbox-inline">
-			          	<input type="checkbox" value="Hipertensão" name="tipo_ati">Hipertensão
+			          	<input type="checkbox" value="Hipertensão" name="doenca[]">Hipertensão
 			        	</label>
 			        	<label class="checkbox-inline">
-			          	<input type="checkbox" value="Osteoporose" name="tipo_ati">Osteoporose
+			          	<input type="checkbox" value="Osteoporose" name="doenca[]">Osteoporose
 			        	</label>
 			        	<label class="checkbox-inline">
-			          	<input type="checkbox" value="Tabagista" name="tipo_ati">Tabagista
+			          	<input type="checkbox" value="Tabagista" name="doenca[]">Tabagista
 			        	</label>
 			      	</div>
 				  	</div>
 				  	<div class="row">
 				  		<div class="form-group col-lg-12">
 								<label for="exampleInputEmail1">Medicação de uso contínuo:</label>
-								<textarea class="form-control" name="descricao" id="des_ati" rows="5" placeholder="Medicação de uso contínuo..."></textarea>
+								<textarea class="form-control" name="medicacao" id="des_ati" rows="5" placeholder="Medicação de uso contínuo..."></textarea>
 							</div>
 				  	</div>
 				  	<div class="row">
 				  		<div class="form-group col-lg-6">
 								<label for="exampleInputEmail1">Alérgico a:</label>
-								<input type="text" class="form-control" placeholder="Alérgia">
+								<input type="text" name="alergico" class="form-control" placeholder="Alérgia">
 							</div>
 							<div class="form-group col-lg-6">
 								<label for="exampleInputEmail1">Outras Enfermidades?</label>
-								<input type="text" class="form-control" placeholder="Outras Enfermidades?">
+								<input type="text" name="outra_enferm" class="form-control" placeholder="Outras Enfermidades?">
 							</div>
 				  	</div>
 				  	<div class="row">
 				  		<div class="form-group col-lg-3">
-								<label>Possui plano de saúde?</label>
-								<select class="form-control" required="">
-			          	<option value="" selected="true" disabled="disabled">Selecione...</option>
-			          	<option value="Sim">Sim</option>
-			          	<option value="Não">Não</option>
-			         	</select>
+							<label>Possui plano de saúde?</label>
+							<select class="form-control">
+					          	<option value="" selected="true" disabled="disabled">Selecione...</option>
+					          	<option value="Sim" name="plano">Sim</option>
+					          	<option value="Não" name="plano">Não</option>
+				         	</select>
 							</div>
 						<div class="form-group col-lg-9">
-			      			<label>Deixar Invisivel</label>
-							<input type="text" class="form-control" placeholder="Onde?">
+			      			<label>Qual?</label>
+							<input type="text" name="plan_qual" class="form-control" placeholder="Qual?">
 						</div>
 				  	</div>
 				  </fieldset>
@@ -216,192 +217,181 @@
 				  	<legend>Informações Adicionais</legend>
 				  	<div class="row">
 				    	<div class="form-group col-lg-3">
-								<label>Estado Civil</label>
-								<select class="form-control" required="">
-			          	<option value="" selected="true" disabled="disabled">Selecione...</option>
-			          	<option value="Casado">Casado</option>
-			          	<option value="Solteiro">Solteiro</option>
-			          	<option value="Viúvo">Viúvo</option>
-			          	<option value="União Estável">União Estável</option>
-			          	<option value="Outros">Outros</option>
+							<label>Estado Civil</label>
+						<select class="form-control" name="estado_civil">
+				          	<option value="" selected="true" disabled="disabled">Selecione...</option>
+				          	<option value="Casado">Casado</option>
+				          	<option value="Solteiro">Solteiro</option>
+				          	<option value="Viúvo">Viúvo</option>
+				          	<option value="União Estável">União Estável</option>
+				          	<option value="Outros">Outros</option>
 			         	</select>
 							</div>
 							<div class="form-group col-lg-3">
 								<label>Nível de Renda</label>
-								<select class="form-control" required="">
-			          	<option value="" selected="true" disabled="disabled">Selecione...</option>
-			          	<option value="Sem Renda">Sem Renda</option>
-			          	<option value="Até 01 Sal. min">Até 01 Sal. min</option>
-			          	<option value="De 02 a 03">De 02 a 03</option>
-			          	<option value="Acima de 03">Acima de 03</option>
+						<select class="form-control" name="nivel_renda">
+				          	<option value="" selected="true" disabled="disabled">Selecione...</option>
+				          	<option value="Sem Renda">Sem Renda</option>
+				          	<option value="Até 01 Sal. min">Até 01 Sal. min</option>
+				          	<option value="De 02 a 03">De 02 a 03</option>
+				          	<option value="Acima de 03">Acima de 03</option>
 			         	</select>
 							</div>
-							<div class="form-group col-lg-3">
-								<label>Origem da Renda</label>
-								<select class="form-control" required="">
-			          	<option value="" selected="true" disabled="disabled">Selecione...</option>
-			          	<option value="Trabalho Remunerado">Trabalho Remunerado</option>
-			          	<option value="Aposentadoria">Aposentadoria</option>
-			          	<option value="Pensão">Pensão</option>
-			          	<option value="Benefício BPC">Benefício BPC</option>
-			          	<option value="Outros">Outros</option>
+						<div class="form-group col-lg-3">
+							<label>Origem da Renda</label>
+						<select class="form-control" name="origem_renda">
+				          	<option value="" selected="true" disabled="disabled">Selecione...</option>
+				          	<option value="Trabalho Remunerado">Trabalho Remunerado</option>
+				          	<option value="Aposentadoria">Aposentadoria</option>
+				          	<option value="Pensão">Pensão</option>
+				          	<option value="Benefício BPC">Benefício BPC</option>
+				          	<option value="Outros">Outros</option>
 			         	</select>
 							</div>
 							<div class="form-group col-lg-3">
 								<label>Nível de Instrução</label>
-								<select class="form-control" required="">
-			          	<option value="" selected="true" disabled="disabled">Selecione...</option>
-			          	<option value="Não Alfabetizado">Não Alfabetizado</option>
-			          	<option value="Alfabetizado">Alfabetizado</option>
-			          	<option value="Fundamental Incompleto">Fundamental Incompleto</option>
-			          	<option value="Fundamental Completo">Fundamental Completo</option>
-			          	<option value="Médio Incompleto">Médio Incompleto</option>
-			          	<option value="Médio Completo">Médio Completo</option>
-			          	<option value="Superior Incompleto">Superior Incompleto</option>
-			          	<option value="Superior Completo">Superior Completo</option>
+						<select class="form-control" name="escolaridade">
+				          	<option value="" selected="true" disabled="disabled">Selecione...</option>
+				          	<option value="Não Alfabetizado">Não Alfabetizado</option>
+				          	<option value="Alfabetizado">Alfabetizado</option>
+				          	<option value="Fundamental Incompleto">Fundamental Incompleto</option>
+				          	<option value="Fundamental Completo">Fundamental Completo</option>
+				          	<option value="Médio Incompleto">Médio Incompleto</option>
+				          	<option value="Médio Completo">Médio Completo</option>
+				          	<option value="Superior Incompleto">Superior Incompleto</option>
+				          	<option value="Superior Completo">Superior Completo</option>
 			         	</select>
 							</div>
 				  	</div>
 				  	<hr>
 				  	<div class="row">
-				  		<div class="form-group col-lg-3">
+				  		<div class="form-group col-lg-4">
 								<label>Como Reside</label>
-								<select class="form-control" required="">
-			          	<option value="" selected="true" disabled="disabled">Selecione...</option>
-			          	<option value="Em sua própria casa">Em sua própria casa</option>
-			          	<option value="Casa de familiares">Casa de familiares</option>
-			          	<option value="Casa de terceiros">Casa de terceiros</option>
-			          	<option value="Outros">Outros</option>
+						<select class="form-control" name="reside">
+				          	<option value="" selected="true" disabled="disabled">Selecione...</option>
+				          	<option value="Em sua própria casa">Em sua própria casa</option>
+				          	<option value="Casa de familiares">Casa de familiares</option>
+				          	<option value="Casa de terceiros">Casa de terceiros</option>
+				          	<option value="Outros">Outros</option>
 			         	</select>
 							</div>
-							<div class="form-group col-lg-6">
-			      		<label>Deixar Invisivel</label>
-								<input type="text" class="form-control" placeholder="Outros">
-							</div>
-							<div class="form-group col-lg-3">
+							<div class="form-group col-lg-4">
 								<label>Com quem Reside</label>
-								<select class="form-control" required="">
-			          	<option value="" selected="true" disabled="disabled">Selecione...</option>
-			          	<option value="Só">Só</option>
-			          	<option value="Com companheiro">Com companheiro(a)</option>
-			          	<option value="Com familiares">Com familiares</option>
-			          	<option value="Com familiares">Com terceiros</option>
+						<select class="form-control" name="com_reside">
+				          	<option value="" selected="true" disabled="disabled">Selecione...</option>
+				          	<option value="Só">Só</option>
+				          	<option value="Com companheiro">Com companheiro(a)</option>
+				          	<option value="Com familiares">Com familiares</option>
+				          	<option value="Com terceiros">Com terceiros</option>
 			         	</select>
 							</div>
-						<div class="form-group col-lg-9">
+						<div class="form-group col-lg-4">
 			      			<label>Quantidade de pessoas</label>
-							<input type="text" class="form-control" placeholder="Quantidade">
+							<input type="text" name="num_redentes" class="form-control" placeholder="Quantidade">
 						</div>
 				  	</div>
 				  </fieldset>
 				  <!--GRUPO PARTICIPAÇÃO DA VIDA FAMILIAR E SOCIAL-->
-					<fieldset>
+				  <fieldset>
 				  	<legend>Participação da Vida Familiar e Social</legend>
 				  	<div class="row">
 				    	<div class="form-group col-lg-6">
-								<label>Participar das atividades domésticas?</label>
-								<select class="form-control" required="">
-			          	<option value="" selected="true" disabled="disabled">Selecione...</option>
-			          	<option value="Frequentemente">Frequentemente</option>
-			          	<option value="Raramente">Raramente</option>
-			          	<option value="Nunca">Nunca</option>
-			         	</select>
-							</div>
-							<div class="form-group col-lg-6">
-			      		<label>Quais as tarefas executadas?</label>
-								<input type="text" class="form-control" placeholder="Quais as tarefas executadas?">
-							</div>
+							<label>Participar das atividades domésticas?</label>
+							<select class="form-control" name="tarefa">
+					          	<option value="" selected="true" disabled="disabled">Selecione...</option>
+					          	<option value="Frequentemente">Frequentemente</option>
+					          	<option value="Raramente">Raramente</option>
+					          	<option value="Nunca">Nunca</option>
+				         	</select>
 						</div>
-						<div class="row">
-							<div class="form-group col-lg-6">
-								<label>Participa de outro Grupo ou Associação?</label>
-								<select class="form-control" required="">
-			          	<option value="" selected="true" disabled="disabled">Selecione...</option>
-			          	<option value="Sim">Sim</option>
-			          	<option value="Não">Não</option>
-			         	</select>
-							</div>
-							<div class="form-group col-lg-6">
-			      		<label>Deixar Invisivel</label>
-								<input type="text" class="form-control" placeholder="Outros">
-							</div>
+						<div class="form-group col-lg-6">
+		      				<label>Quais as tarefas executadas?</label>
+							<input type="text" name="outra_tarefa" class="form-control" placeholder="Quais as tarefas executadas?">
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-lg-6">
+							<label>Participa de outro Grupo ou Associação?</label>
+							<select class="form-control" name="grupo" >
+					          	<option value="" selected="true" disabled="disabled">Selecione...</option>
+					          	<option value="Sim">Sim</option>
+					          	<option value="Não">Não</option>
+				         	</select>
+						</div>
+						<div class="form-group col-lg-6">
+			      			<label>Qual?</label>
+							<input type="text" name="outro_parti" class="form-control" placeholder="Outros">
+						</div>
 				  	</div>
 				 	</fieldset>
 				 	<!--GRUPO ASPECTOS PSICOLOGICOS-->
 				 	<fieldset>
-			  	  <legend>Aspectos Psicológicos</legend>
-			  	  <div class="row">
-			  	    <div class="form-group col-lg-4">
-								<select class="form-control" required="">
-			          	<option value="" selected="true" disabled="disabled">Selecione...</option>
-			          	<option value="Depressão">Depressão</option>
-			          	<option value="Ansiedade">Ansiedade</option>
-			          	<option value="Insônia">Insônia</option>
-			          	<option value="Outros">Outros</option>
-			         	</select>
-							</div>
-			      	<div class="form-group col-lg-8">
-								<input type="text" class="form-control" placeholder="Outros">
-							</div>
+			  	  		<legend>Aspectos Psicológicos</legend>
+			  	  	<div class="row">
+			  	    	<div class="form-group col-lg-4">
+							<select class="form-control" name="psicologico">
+					          	<option value="" selected="true" disabled="disabled">Selecione...</option>
+					          	<option value="Depressão">Depressão</option>
+					          	<option value="Ansiedade">Ansiedade</option>
+					          	<option value="Insônia">Insônia</option>
+					          	<option value="Outros">Outros</option>
+				         	</select>
+						</div>
+			      		<div class="form-group col-lg-8">
+							<input type="text" name="outro_psi" class="form-control" placeholder="Outros">
+						</div>
 			  	  </div>
-				 	</fieldset>
+				  </fieldset>
 	 				<!--GRUPO INTERESSSES E PREFERENCIAS-->
-				 	<fieldset>
-			  	  <legend>Interesses e Preferências</legend>
-			  	  <div class="row">
-			  	    <div class="form-group col-lg-7">
-			  	    	<label>Atividade Física</label><br>
-				    		<label class="checkbox-inline">
-			          	<input type="checkbox" value="Caminhada Orientada" name="tipo_ati">Caminhada Orientada
-			        	</label>
-			        	<label class="checkbox-inline">
-			          	<input type="checkbox" value="Hidroginástica" name="tipo_ati">Hidroginástica
-			        	</label>
-			        	<label class="checkbox-inline">
-			          	<input type="checkbox" value="Natação" name="tipo_ati">Natação
-			        	</label>
-			        	<label class="checkbox-inline">
-			          	<input type="checkbox" value="Ioga" name="tipo_ati">Ioga
-			        	</label>
-			        	<label class="checkbox-inline">
-			          	<input type="checkbox" value="Ginástica" name="tipo_ati">Ginástica
-			        	</label>
-			        	<label class="checkbox-inline">
-			          	<input type="checkbox" value="Outros" name="tipo_ati">Outros
-			        	</label>
-			      	</div>
-			      	<div class="form-group col-lg-5">
-			      		<br>
-								<input type="text" class="form-control" placeholder="Outros">
-							</div>
-			  	  </div>
-			  	  <hr>
+				  <fieldset>
+			  	  	<legend>Interesses e Preferências</legend>
+			  	  	<div class="row">
+				  	    <div class="form-group col-lg-7">
+				  	    	<label>Atividade Física</label><br>
+					    		<label class="checkbox-inline">
+				          	<input type="checkbox" value="Caminhada Orientada" name="at_fisica[]">Caminhada Orientada
+				        	</label>
+				        	<label class="checkbox-inline">
+				          	<input type="checkbox" value="Hidroginástica" name="at_fisica[]">Hidroginástica
+				        	</label>
+				        	<label class="checkbox-inline">
+				          	<input type="checkbox" value="Natação" name="at_fisica[]">Natação
+				        	</label>
+				        	<label class="checkbox-inline">
+				          	<input type="checkbox" value="Ioga" name="at_fisica[]">Ioga
+				        	</label>
+				        	<label class="checkbox-inline">
+				          	<input type="checkbox" value="Ginástica" name="at_fisica[]">Ginástica
+				        	</label>
+				        	<label class="checkbox-inline">
+				          	<input type="checkbox" value="Outros" name="at_fisica[]">Outros
+				        	</label>
+				      	</div>
+			  	  	</div>
+			  	  	<hr>
 			  	  <div class="row">
 			  	  	 <div class="form-group col-lg-6">
 			  	    	<label>Atividade Sócio-Educativas</label><br>
-				    		<label class="checkbox-inline">
-			          	<input type="checkbox" value="Dança" name="tipo_ati">Dança
+				    	<label class="checkbox-inline">
+			          	<input type="checkbox" value="Dança" name="at_socio[]">Dança
 			        	</label>
 			        	<label class="checkbox-inline">
-			          	<input type="checkbox" value="Coral" name="tipo_ati">Coral
+			          	<input type="checkbox" value="Coral" name="at_socio[]">Coral
 			        	</label>
 			        	<label class="checkbox-inline">
-			          	<input type="checkbox" value="Oficinas de Artesanato" name="tipo_ati">Oficinas de Artesanato
+			          	<input type="checkbox" value="Oficinas de Artesanato" name="at_socio[]">Oficinas de Artesanato
 			        	</label>
 			        	<label class="checkbox-inline">
-			          	<input type="checkbox" value="Teatro" name="tipo_ati">Teatro
+			          	<input type="checkbox" value="Teatro" name="at_socio[]">Teatro
 			        	</label>
 			        	<label class="checkbox-inline">
-			          	<input type="checkbox" value="Outros" name="tipo_ati">Outros
+			          	<input type="checkbox" value="Outros" name="at_socio[]">Outros
 			        	</label>
-			        	</div>
-			      	<div class="form-group col-lg-6">
-			      		<br>
-								<input type="text" class="form-control" placeholder="Outros">
-							</div>
+			        </div>
 			  	  </div>
-				 	</fieldset>
-				</form>
+				 </fieldset>
+				 	<button type="submit" name="cadastrar" class="btn btn-block btn-lg btn-primary">Cadastrar</button>
+			</form>
       </div>
     </div>
     <!--RODAPÉ-->

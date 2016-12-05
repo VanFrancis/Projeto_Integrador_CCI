@@ -1,6 +1,8 @@
 <html>
   <head>
-    <?php include('config/head.php'); ?>
+    <?php include('config/head.php'); 
+    require'config/verifica.php';
+    ?>
   </head>
   <body>
     <?php include('config/menu.php');  ?>

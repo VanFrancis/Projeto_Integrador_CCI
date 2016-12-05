@@ -1,40 +1,27 @@
 • INDEX
 	- Video institucional 
-	- telefone fixo 
-	
-• CAD_IDOSO >>SOCORROOOOO<<
+
+• CAD_IDOSO
 	- Layout 
-	    - Formulário:
-	- Funcionalidade 
-• CAD_ATIVIDADE
-	- Funcionalidade: 
-	    - Cadastro: ok
-	    - Alterar:
-	    - Excluir
+	    - Formulário: OK 
+	    - Funcionalidade 
 • FREQUENCIA
-	- Layout 
-	- Funcionalidade:
-	    - Alterar: não funciona
-	    - Excluir: não funciona
-• LISTA_AITIVIDADE
-	- Funcionalidade 
+    - Falta arrumar a mensagem
+• LISTA_OFICINA
+    
+• LISTA_EVENTO
+
 • LISTA_CADASTRO 
 	- Layout 
 	- Funcionalidade:
 	     - Alterar: não funciona
 	     - Excluir: não funciona
-• LISTA_EVENTO 
-	- Funcionalidade:
-	     - Alterar: não funciona
-	     - Excluir: não funciona
 • LISTA_FRENQUENCIA
-	- Funcionalidade 
-• LOGIN 
-    - Falta restringir o acesso 
+	   
 • RELATORIO
 	- Layout 
 	- Funcionalidade 
------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 COMANDO BANCO DE DADOS
 - phpmyadmin-ctl install
     Username: mrsans

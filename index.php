@@ -199,10 +199,10 @@
             			<div class="col-xs-3">
     			<div class="well well-sm" style="background-color: #18bc9c">
     				<dl style="color: #fff">
-    				  <dt class="text-center"><h4><?php echo $array['nome']; ?> Reveillon CCI</h4></dt>
+    				  <dt class="text-center"><h4><?php echo $array['nome']; ?></h4></dt>
     				  <dd>Data: <?php echo date('d/m/Y', strtotime($array['data_inicio']));  ?></dd>
-    				  <dd>Horário: <?php echo $array['hora_inicio']; ?>19:00</dd>
-    				  <dd><?php echo $array['descricao']; ?>Festa de fim de ano do CCI</dd>
+    				  <dd>Horário: <?php echo $array['hora_inicio']; ?></dd>
+    				  <dd>Descrição: <?php echo $array['descricao']; ?></dd>
     				</dl>		
     			</div>		
 		    </div>
@@ -222,9 +222,9 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
                     <div class="col-md-5">
-                        <h4>Endereço</h4><p>Av. Amazonas-6888,Tiradentes</p>
+                        <h4>Endereço</h4><p>Av. Amazonas-6888, Tiradentes</p>
                         <p>Porto Velho - RO</p>
-                        <h4>Telefone</h4><p>69 0000-0000</p>
+                        <h4>Telefone</h4><p>(69) 3901-3388</p>
                         <h4>E-mail</h4><p>cci.semas.pvh@gmail.com</p>
                         <h4>Funcionamento</h4><p>Seg - Sex 07:30 às 18:00</p>
                     </div>

@@ -15,7 +15,7 @@
 				$data_fim = $_POST['data_fim'];
 				$hora_inicio = $_POST['hora_inicio'];
 				$hora_fim = $_POST['hora_fim'];
-				$semana_string=" "; 
+				$semana_string=""; 
 				foreach ($_POST['dia_semanaa'] as $dia) {
 					$semana_string.=$dia.',';
 				}
@@ -29,14 +29,14 @@
 				$query = "INSERT INTO tb_atividade (`id_atividade`,`tipo_atividade`,`nome`,`data_inicio`,`data_fim`,`hora_inicio`,`hora_fim`,`dia_semanaa`,`descricao`) VALUES ('NULL', '$tipo_atividade','$nome','$data_inicio','$data_fim','$hora_inicio','$hora_fim','$dia_semanaa','$descricao')"; 	
 				if(!mysql_query($query,$conn)) die(mysql_error());
 				
-				$con_id= mysql_query("SELECT MAX(id_atividade) FROM tb_atividade")or die (mysql_error());;
+			
 			}
 			
 			if($tipo_atividade=="Oficina"){
-				header("location:../lista_oficina.php?id=$con_id");
+				header("Location:../lista_oficina.php?id=$con_id");
 			}
 			else 
-				header("location:../lista_evento.php?id=$con_id");
+				header("Location:../lista_evento.php?id=$con_id");
 		    ?>
     </body>
 </html>

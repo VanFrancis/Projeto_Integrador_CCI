@@ -23,7 +23,8 @@
 	 	$_SESSION['usuario'] = "$usuario";
 	 	$_SESSION['senha'] = "$senha";
 	 	$_SESSION['tipo'] = $vale['tp_usuario'];
-	 	$_SESSION['idLogado'] = "$id";
+	 	$_SESSION['id_usuario'] = "$id";
+	 	$_SESSION['logado']="true";
 	 	
 	 	switch($vale['tp_usuario']){
 	 		case 1: 

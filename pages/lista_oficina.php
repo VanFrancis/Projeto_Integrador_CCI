@@ -1,6 +1,7 @@
 <?php 
 	require'config/conexao.php';
 	require'config/funcoes.php';
+	require'config/verifica.php';
  ?>
 <html>
   <head>
@@ -97,16 +98,16 @@
               <label for="basic-url">Tipo de Atividade</label>
               <div class="form-group required">
                 <label class="radio-inline">
-                  <input type="radio" class="tevento" value="Evento" name="tipo_atividade" checked>Evento
+                  <input type="radio" class="tevento" value="Evento" name="tipo_atividade" >Evento
                 </label>
                 <label class="radio-inline">
-                  <input type="radio" value="Oficina" name="tipo_atividade">Oficina
+                  <input type="radio" value="Oficina" name="tipo_atividade" checked>Oficina
                 </label>
               </div>
               <div class="form-group">
                 <label class="control-label" for="nome_ati">Nome da Atividade</label>
                  <input name="id_atividade" class="modal_idatividade" type="hidden" required />
-                <input name="nome" id="modal_nome" type="text"oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('Preencha o campo Nome da Atividade')" required />
+                <input name="nome" class="form-control" id="modal_nome" type="text"oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('Preencha o campo Nome da Atividade')" required />
               </div>
               <div class="row">
                 <div class="form-group col-md-3">
@@ -119,11 +120,11 @@
                 </div>
                 <div class="form-group col-md-3">
                   <label for="basic-url">Horário do Início  </label>
-                  <input name="hora_inicio" class="modal_hinicio" type="text" placeholder="hh:mm" data-mask="00:00" maxlength="5" oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('Preencha o campo Data')" required />
+                  <input name="hora_inicio" id="modal_hinicio" type="text" placeholder="hh:mm" data-mask="00:00" maxlength="5" oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('Preencha o campo Data')" required />
                 </div>
                 <div class="form-group col-md-3">
                   <label for="basic-url">Horario do Término</label>
-                  <input name="hora_fim" class="modal_hfim" type="text" placeholder="hh:mm" data-mask="00:00" maxlength="5" oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('Preencha o campo Data')" required />
+                  <input name="hora_fim" id="modal_hfim" type="text" placeholder="hh:mm" data-mask="00:00" maxlength="5" oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('Preencha o campo Data')" required />
                 </div>
               </div>
               	<label for="basic-url">Dias da Semana</label>
@@ -204,8 +205,8 @@
     var modal_sab = $(e.relatedTarget).attr('data-sab');
 	
 	  $(this).find('.modal_idatividade').val(modal_idatividade);
-	  $(this).find('#modal_nome').val(modal_nome);
-    $(this).find('#modal_dinicio').val(modal_dinicio);
+	  $(this).find('.modal_nome').val(modal_nome);
+    $(this).find('.modal_dinicio').val(modal_dinicio);
     $(this).find('.modal_dfim').val(modal_dfim);
     $(this).find('.modal_hinicio').val(modal_hinicio);
     $(this).find('.modal_hfim').val(modal_hfim);

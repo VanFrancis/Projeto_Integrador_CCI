@@ -1,6 +1,7 @@
 <?php 
 	require'config/conexao.php';
 	require'config/funcoes.php';
+	require'config/verifica.php';
  ?>
 <html>
   <head>
@@ -36,8 +37,7 @@
               <tr>
                 <?php 
       						$query = mysql_query("SELECT * FROM tb_atividade WHERE tipo_atividade='Evento' ORDER BY id_atividade DESC") or die (mysql_error());
-      							while ($array = mysql_fetch_array($query)){
-				?>
+      							while ($array = mysql_fetch_array($query)){ ?>
                             <tr>
                                 <td>
                                     <?php echo $array['nome']; ?>
@@ -66,13 +66,12 @@
                                         <?php echo organiza_dias_botao($array['dia_semanaa']); ?>
                                         
                                      >
-										<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Alterar
-									</button>
-                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModalExcluir" name="excluir"  href="#" aria-label="Left Align" data-idatividade="<?php echo $array['id_atividade'];?>">
-                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Excluir</button>
+                										<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Alterar</button>
+                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModalExcluir" name="excluir"  href="#" aria-label="Left Align" data-idatividade="<?php echo $array['id_atividade'];?>">
+                                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Excluir</button>
                                 </td>
-                            </tr> <?php  
-                            } ?>
+                              </tr> <?php  
+                           } ?>
                   </tr>
             </tbody>
           </table>
@@ -110,13 +109,13 @@
               </div>
               <div class="form-group">
                 <label class="control-label" for="nome_ati">Nome da Atividade</label>
-                 <input name="id_atividade" class="modal_idatividade" type="hidden" required />
-                <input name="nome" id="modal_nome" type="text"oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('Preencha o campo Nome da Atividade')" required />
+                 <input name="id_atividade"  class="modal_idatividade" type="hidden" required />
+                <input name="nome" class="modal_nome" type="text"oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('Preencha o campo Nome da Atividade')" required />
               </div>
               <div class="row">
                 <div class="form-group col-md-3">
                   <label for="basic-url">Data do Início </label>
-                  <input name="data_inicio" id="modal_dinicio" type="text" autocomplete="off" oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('Preencha o campo Data')" required />
+                  <input name="data_inicio" class="modal_dinicio" type="text" autocomplete="off" oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('Preencha o campo Data')" required />
                 </div>
                 <div class="form-group col-md-3">
                   <label for="basic-url">Data do Término</label>
@@ -210,9 +209,9 @@
     var modal_sex = $(e.relatedTarget).attr('data-sex');
     var modal_sab = $(e.relatedTarget).attr('data-sab');
 	
-	  $(this).find('.modal_idatividade').val(modal_idatividade);
-	  $(this).find('#modal_nome').val(modal_nome);
-    $(this).find('#modal_dinicio').val(modal_dinicio);
+	$(this).find('.modal_idatividade').val(modal_idatividade);
+	$(this).find('.modal_nome').val(modal_nome);
+    $(this).find('.modal_dinicio').val(modal_dinicio);
     $(this).find('.modal_dfim').val(modal_dfim);
     $(this).find('.modal_hinicio').val(modal_hinicio);
     $(this).find('.modal_hfim').val(modal_hfim);
