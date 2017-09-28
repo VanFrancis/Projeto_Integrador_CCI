@@ -28,10 +28,10 @@
    return $resultado;
    }
    
-   function formata_data_novo ($string) {
+   //function formata_data_novo ($string) {
    
-   $temp = explode("/", $string);
-   $resultado = $temp[2] . '-' . $temp[1] . '-' . $temp[0];
-   return $resultado;
-   }
+   //$temp = explode("/", $string);
+   //$resultado = $temp[2] . '-' . $temp[1] . '-' . $temp[0];
+   //return $resultado;
+   //}
 ?>

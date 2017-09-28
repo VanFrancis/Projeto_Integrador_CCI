@@ -16,18 +16,21 @@
     </div>
     <div class="section">
       <div class="container">
+      	<h5>Campos com <spam class="text-danger">*</spam> são obrigatórios</h5>
         <form role="form" action="config/salva_idoso.php" method="POST">
         	<!--GRUPO IDENTIFICAÇÃO-->
 					<fieldset>
 					  <legend>Identificação</legend>
 						<div class="row">
 							<div class="form-group col-lg-5">
-								<label class="control-label">Nome Completo</label>
-				        		<input class="form-control" name="nome" placeholder="Nome Completo" type="text">
+								<label class="control-label">Nome Completo <spam class="text-danger">*</spam></label>
+				        		<input class="form-control" name="nome" autocomplete="off" placeholder="Nome Completo" type="text" oninput="setCustomValidity('')" 
+							oninvalid="this.setCustomValidity('Preencha o campo Nome Completo')" required />
 							</div>
 							<div class="form-group col-lg-3">
-								<label class="control-label">Data Nascimento</label>
-				        		<input class="form-control" name="data_nascimento" type="date">
+								<label class="control-label">Data Nascimento <spam class="text-danger">*</spam></label>
+				        		<input class="form-control" name="data_nascimento" type="date" oninput="setCustomValidity('')" 
+							oninvalid="this.setCustomValidity('Preencha o campo Data de Nascimento')" required/>
 							</div>
 							<div class="form-group col-lg-4">
 								<label>Sexo</label>
@@ -84,39 +87,43 @@
 							</div>
 							<div class="form-group col-lg-4">
 								<label>Cidade</label>
-								<input type="text" name="cidade" class="form-control"  placeholder="Cidade">
+								<input type="text" name="cidade" autocomplete="off" class="form-control"  placeholder="Cidade">
 							</div>
 							<div class="form-group col-lg-3">
 								<label>Nacionalidade</label>
-								<input type="text" name ="nacionalidade" class="form-control"  placeholder="Nacionalidade">
+								<input type="text" name ="nacionalidade" autocomplete="off" class="form-control"  placeholder="Nacionalidade">
 							</div>
 						</div>
 						<div class="row">
 							<div class="form-group col-lg-4">
-								<label>CPF</label>
-								<input type="text" name="cpf" class="form-control" placeholder="000.000.000 - 00">
+								<label>CPF <spam class="text-danger">*</spam></label>
+								<input type="text" name="cpf" class="form-control" autocomplete="off"  data-mask="000.000.000-00" maxlength="12" placeholder="000.000.000 - 00" oninput="setCustomValidity('')" 
+							oninvalid="this.setCustomValidity('Preencha o campo CPF')" required/>
 							</div>
 							<div class="form-group col-lg-4">
 								<label>RG</label>
-								<input type="text" class="form-control" placeholder="RG">
+								<input type="text" name="rg" class="form-control" autocomplete="off" placeholder="RG">
 							</div>
 							<div class="form-group col-lg-4">
 								<label>Emissor</label>
-								<input type="text" name ="emissor" class="form-control" placeholder="Emissor">
+								<input type="text" name ="emissor" autocomplete="off" class="form-control" placeholder="Emissor">
 							</div>
 						</div>
 						<div class="row">
 							<div class="form-group col-lg-6">
-								<label>Endereço</label>
-								<input type="text" name="endereco" class="form-control" placeholder="Endereço">
+								<label>Endereço <spam class="text-danger">*</spam></label>
+								<input type="text" name="endereco" class="form-control" placeholder="Endereço" oninput="setCustomValidity('')" 
+							oninvalid="this.setCustomValidity('Preencha o campo Endereço')" required />
 							</div>
 							<div class="form-group col-lg-2">
-								<label>Nº</label>
-								<input type="text" name="numero" class="form-control" placeholder="Numero">
+								<label>Nº <spam class="text-danger">*</spam></label>
+								<input type="text" name="numero" autocomplete="off" class="form-control" placeholder="Numero" oninput="setCustomValidity('')" 
+							oninvalid="this.setCustomValidity('Preencha o campo Número')" required />
 							</div>
 							<div class="form-group col-lg-4">
-								<label>Bairro</label>
-								<input type="text" name="bairro" class="form-control" placeholder="Bairro">
+								<label>Bairro <spam class="text-danger">*</spam></label>
+								<input type="text" name="bairro" autocomplete="off" class="form-control" placeholder="Bairro" oninput="setCustomValidity('')" 
+							oninvalid="this.setCustomValidity('Preencha o campo Bairro')" required />
 							</div>
 						</div>
 						<div class="row">
@@ -130,17 +137,18 @@
 							</div>
 						  <div class="form-group col-lg-10">
 				      	<label>Onde?</label>
-								<input type="text" name="trab_onde" class="form-control" placeholder="Onde?">
+								<input type="text" name="trab_onde" autocomplete="off" class="form-control" placeholder="Onde?">
 							</div>
 						</div>
 						<div class="row">
 							<div class="form-group col-lg-6">
-								<label for="exampleInputEmail1">Telefone</label>
-								<input type="text" name="telefone" class="form-control" placeholder="Telefone">
+								<label for="exampleInputEmail1">Telefone <spam class="text-danger">*</spam></label>
+								<input type="text" name="telefone" autocomplete="off" class="form-control" placeholder="Telefone"oninput="setCustomValidity('')" 
+								oninvalid="this.setCustomValidity('Preencha o campo Telefone')" required />
 							</div>
 							<div class="form-group col-lg-6">
 								<label for="exampleInputEmail1">Celular</label>
-								<input type="text" name="celular" class="form-control" placeholder="Celular">
+								<input type="text" name="celular" autocomplete="off" class="form-control" placeholder="Celular">
 							</div>
 						</div>
 					</fieldset>
@@ -150,15 +158,15 @@
 						<div class="row">
 							<div class="form-group col-lg-4">
 								<label for="exampleInputEmail1">Nome</label>
-								<input type="text" name="nome_contato" class="form-control" placeholder="Nome">
+								<input type="text" name="nome_contato" autocomplete="off" class="form-control" placeholder="Nome">
 							</div>
 							<div class="form-group col-lg-4">
 								<label for="exampleInputEmail1">Parentesco</label>
-								<input type="text"name="parentesco" class="form-control" placeholder="Parentesco">
+								<input type="text"name="parentesco" autocomplete="off" class="form-control" placeholder="Parentesco">
 							</div>
 							<div class="form-group col-lg-4">
 								<label for="exampleInputEmail1">Telefone</label>
-								<input type="text" name="telefone_contato" class="form-control" placeholder="Telefone">
+								<input type="text" name="telefone_contato" autocomplete="off" class="form-control" placeholder="Telefone">
 							</div>
 						</div>
 	  			</fieldset>
@@ -190,25 +198,25 @@
 				  	<div class="row">
 				  		<div class="form-group col-lg-6">
 								<label for="exampleInputEmail1">Alérgico a:</label>
-								<input type="text" name="alergico" class="form-control" placeholder="Alérgia">
+								<input type="text" name="alergico" autocomplete="off" class="form-control" placeholder="Alérgia">
 							</div>
 							<div class="form-group col-lg-6">
 								<label for="exampleInputEmail1">Outras Enfermidades?</label>
-								<input type="text" name="outra_enferm" class="form-control" placeholder="Outras Enfermidades?">
+								<input type="text" name="outra_enferm" autocomplete="off" class="form-control" placeholder="Outras Enfermidades?">
 							</div>
 				  	</div>
 				  	<div class="row">
 				  		<div class="form-group col-lg-3">
 							<label>Possui plano de saúde?</label>
-							<select class="form-control">
+							<select class="form-control" name="plano">
 					          	<option value="" selected="true" disabled="disabled">Selecione...</option>
-					          	<option value="Sim" name="plano">Sim</option>
-					          	<option value="Não" name="plano">Não</option>
+					          	<option value="Sim">Sim</option>
+					          	<option value="Não">Não</option>
 				         	</select>
 							</div>
 						<div class="form-group col-lg-9">
 			      			<label>Qual?</label>
-							<input type="text" name="plan_qual" class="form-control" placeholder="Qual?">
+							<input type="text" name="plan_qual" autocomplete="off" class="form-control" placeholder="Qual?">
 						</div>
 				  	</div>
 				  </fieldset>
@@ -287,7 +295,7 @@
 							</div>
 						<div class="form-group col-lg-4">
 			      			<label>Quantidade de pessoas</label>
-							<input type="text" name="num_redentes" class="form-control" placeholder="Quantidade">
+							<input type="text" name="num_redentes" autocomplete="off" class="form-control" placeholder="Quantidade">
 						</div>
 				  	</div>
 				  </fieldset>
@@ -306,7 +314,7 @@
 						</div>
 						<div class="form-group col-lg-6">
 		      				<label>Quais as tarefas executadas?</label>
-							<input type="text" name="outra_tarefa" class="form-control" placeholder="Quais as tarefas executadas?">
+							<input type="text" name="outra_tarefa" autocomplete="off" class="form-control" placeholder="Quais as tarefas executadas?">
 						</div>
 					</div>
 					<div class="row">
@@ -320,7 +328,7 @@
 						</div>
 						<div class="form-group col-lg-6">
 			      			<label>Qual?</label>
-							<input type="text" name="outro_parti" class="form-control" placeholder="Outros">
+							<input type="text" name="outro_parti" autocomplete="off" class="form-control" placeholder="Outros">
 						</div>
 				  	</div>
 				 	</fieldset>
@@ -338,7 +346,7 @@
 				         	</select>
 						</div>
 			      		<div class="form-group col-lg-8">
-							<input type="text" name="outro_psi" class="form-control" placeholder="Outros">
+							<input type="text" name="outro_psi" autocomplete="off" class="form-control" placeholder="Outros">
 						</div>
 			  	  </div>
 				  </fieldset>

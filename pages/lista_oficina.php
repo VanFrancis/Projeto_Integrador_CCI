@@ -18,12 +18,11 @@
       </div>
     </div>
     </div>
-    
       <div class="row">
     <div class="section">
       <div class="container">
-          <div class="col-md-12">
-            <table class="table table table-hover table-condensed table-bordered">
+          <div class="col-lg-12">
+            <table class="table col-lg-12 table-hover table-condensed table-bordered">
             <thead>
               <tr class="text-center">
                 <th class="text-center">Atividades</th>
@@ -37,26 +36,25 @@
             <tbody>
               <tr>
                 <?php 
-      						$query = mysql_query("SELECT * FROM tb_atividade WHERE tipo_atividade='Oficina' ORDER BY data_inicio ASC") or die (mysql_error());
-      							while ($array = mysql_fetch_array($query)){
-      					 	?>
-      							<tr>
-      								<td>
-      									<?php echo $array['nome']; ?>
-      								</td>
-      								<td>
-      									<?php echo date('d/m/Y', strtotime($array['data_inicio']));  ?> -  <?php echo date('d/m/Y', strtotime($array['data_fim']));  ?>
-      								</td>
-      								<td>
-      									<?php echo date('H:s', strtotime($array['hora_inicio']));?>
-      								</td>
-      								<td>
-      									<?php echo $array['dia_semanaa']; ?>
-      								</td>
-      								<td>
-      									<?php echo $array['descricao']; ?>
-      								</td>
-      								 <td class="text-center">
+      						$query = mysql_query("SELECT * FROM tb_atividade WHERE tipo_atividade='Oficina' ORDER BY id_atividade DESC") or die (mysql_error());
+      							while ($array = mysql_fetch_array($query)){ ?>
+                            <tr>
+                                <td>
+                                    <?php echo $array['nome']; ?>
+                                </td>
+                                <td>
+                                    <?php echo date('d/m/Y', strtotime($array['data_inicio']));  ?> -  <?php echo date('d/m/Y', strtotime($array['data_fim']));  ?>
+                                </td>
+                                <td>
+                                    <?php echo date('H:s', strtotime($array['hora_inicio']));?>
+                                </td>
+                                <td>
+                                    <?php echo $array['dia_semanaa']; ?>
+                                </td>
+                                <td>
+                                    <?php echo $array['descricao']; ?>
+                                </td>
+                                <td class="text-center">
                                     <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#myModal" href="#" aria-label="Left Align"
                                     	data-idatividade="<?php echo $array['id_atividade'];?>"
                                         data-nome="<?php echo $array['nome']; ?>"
@@ -66,13 +64,14 @@
                                         data-hfim="<?php echo date('H:s', strtotime($array['hora_fim']));?>"
                                         data-descricao="<?php echo $array['descricao'];?>"
                                         <?php echo organiza_dias_botao($array['dia_semanaa']); ?>
+                                        
                                      >
-    										<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Alterar</button>
-                        <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModalExcluir" name="excluir"  href="#" aria-label="Left Align" data-idatividade="<?php echo $array['id_atividade'];?>">
-                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Excluir</button>
-                                    </td>
-      							</tr> <?php  
-      							} ?>
+                										<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Alterar</button>
+                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModalExcluir" name="excluir"  href="#" aria-label="Left Align" data-idatividade="<?php echo $array['id_atividade'];?>">
+                                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Excluir</button>
+                                </td>
+                              </tr> <?php  
+                           } ?>
                   </tr>
             </tbody>
           </table>
@@ -80,8 +79,11 @@
         </div>
       </div>
     </div>
-    <!--LINK RODAPE-->
+     <!--LINK RODAPE-->
     <?php include('config/rodape.php'); ?>
+   
+    <!--FUNÇÃO ALTERAR-->
+    
     <!-- Modal Alterar -->
       <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
@@ -106,25 +108,25 @@
               </div>
               <div class="form-group">
                 <label class="control-label" for="nome_ati">Nome da Atividade</label>
-                 <input name="id_atividade" class="modal_idatividade" type="hidden" required />
-                <input name="nome" class="form-control" id="modal_nome" type="text"oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('Preencha o campo Nome da Atividade')" required />
+                 <input name="id_atividade"  class="modal_idatividade" type="hidden" required />
+                <input name="nome" class="modal_nome" type="text"oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('Preencha o campo Nome da Atividade')" required />
               </div>
               <div class="row">
                 <div class="form-group col-md-3">
                   <label for="basic-url">Data do Início </label>
-                  <input name="data_inicio" id="modal_dinicio" type="text" autocomplete="off" oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('Preencha o campo Data')" required />
+                  <input name="data_inicio" class="modal_dinicio" type="text" autocomplete="off" oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('Preencha o campo Data')" required />
                 </div>
                 <div class="form-group col-md-3">
                   <label for="basic-url">Data do Término</label>
                   <input name="data_fim" class="modal_dfim" type="text" autocomplete="off" oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('Preencha o campo Data')" required />
                 </div>
                 <div class="form-group col-md-3">
-                  <label for="basic-url">Horário do Início  </label>
-                  <input name="hora_inicio" id="modal_hinicio" type="text" placeholder="hh:mm" data-mask="00:00" maxlength="5" oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('Preencha o campo Data')" required />
+                  <label for="basic-url">Horário do Início</label>
+                  <input name="hora_inicio" class="modal_hinicio" type="text" placeholder="hh:mm" data-mask="00:00" maxlength="5" oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('Preencha o campo Data')" required />
                 </div>
                 <div class="form-group col-md-3">
                   <label for="basic-url">Horario do Término</label>
-                  <input name="hora_fim" id="modal_hfim" type="text" placeholder="hh:mm" data-mask="00:00" maxlength="5" oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('Preencha o campo Data')" required />
+                  <input name="hora_fim" class="modal_hfim" type="text" placeholder="hh:mm" data-mask="00:00" maxlength="5" oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('Preencha o campo Data')" required />
                 </div>
               </div>
               	<label for="basic-url">Dias da Semana</label>
@@ -162,6 +164,7 @@
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
     </form>
+    
     <!-- Modal Excluir -->
     <div class="modal fade" id='myModalExcluir' tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -176,13 +179,14 @@
         </div>
         <div class="modal-footer">
           <form method="POST" action="config/exclui_oficina.php">
-			      <input name="id_atividade" class="modal_idatividade" type="hidden" required />
+			<input name="id_atividade" class="modal_idatividade" type="hidden" required />
             <button type="submit" name="botaoConfirma" class="btn btn-danger">Excluir</button>
             <button type="button" class="btn btnn-default" data-dismiss="modal">Fechar</button>
           </form>
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
+   
   </body>
   <!--LINK SCRIPTS-->
    <?php include('config/scripts.php'); ?>
@@ -204,8 +208,8 @@
     var modal_sex = $(e.relatedTarget).attr('data-sex');
     var modal_sab = $(e.relatedTarget).attr('data-sab');
 	
-	  $(this).find('.modal_idatividade').val(modal_idatividade);
-	  $(this).find('.modal_nome').val(modal_nome);
+	$(this).find('.modal_idatividade').val(modal_idatividade);
+	$(this).find('.modal_nome').val(modal_nome);
     $(this).find('.modal_dinicio').val(modal_dinicio);
     $(this).find('.modal_dfim').val(modal_dfim);
     $(this).find('.modal_hinicio').val(modal_hinicio);

@@ -12,6 +12,7 @@
       <div class="container">
       <div class="row">
         <div class="col-md-12">
+          
         <h1>Lista de Frequência: <?php echo date("d/m/Y"); ?></h1>
       </div>
     </div>

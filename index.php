@@ -160,7 +160,6 @@
             </div>
         </div>
     </section>
-    
     <!-- About Section -->
     <section class="success" id="about">
         <div class="container">
@@ -172,15 +171,17 @@
             </div>
             <div class="row">
                 <div class="col-lg-4 col-lg-offset-2">
-                    <p>O CCI foi inaugurado dia 29 de março de 2012, localizado na Avenida Amazonas, 6888, bairro Tiradentes. O objetivo desse local é de fazer promoção de atividades físicas, recreativas e culturais. Um espaço totalmente voltado para convívio social e de prevenção às situações de risco social.Qualquer idoso acima de 60 anos pode participar de todas as atividades apenas indo até o Centro de Convivência do idoso e se cadastrando.</p>
+                    <p>O CCI foi inaugurado dia 29 de março de 2012, localizado na Avenida Amazonas, 6888, bairro Tiradentes. O objetivo desse local é de fazer promoção de atividades físicas, recreativas e culturais. Um espaço totalmente voltado para convívio social e de prevenção às situações de risco social. Qualquer idoso acima de 60 anos pode participar de todas as atividades apenas indo até o Centro de Convivência do idoso e se cadastrando.</p>
                 </div>
                 <div class="col-lg-4">
-                    <img src="img/cci.gif">
+                   <video width="500" height="300" controls>
+                      <source src="video/Video do CCI.mp4" type="video/mp4">
+                    CCI
+                    </video>
                 </div>
             </div>
         </div>
     </section>
-    
     <!-- Eventos Section -->
     <section id="evento">
         <div class="container">
@@ -201,7 +202,7 @@
     				<dl style="color: #fff">
     				  <dt class="text-center"><h4><?php echo $array['nome']; ?></h4></dt>
     				  <dd>Data: <?php echo date('d/m/Y', strtotime($array['data_inicio']));  ?></dd>
-    				  <dd>Horário: <?php echo $array['hora_inicio']; ?></dd>
+    				  <dd>Horário: <?php echo date('H:m', strtotime($array['hora_inicio'])); ?></dd>
     				  <dd>Descrição: <?php echo $array['descricao']; ?></dd>
     				</dl>		
     			</div>		
@@ -261,8 +262,8 @@
                         </ul>
                     </div>
                     <div class="footer-col col-md-4">
-                        <h3>Apoio</h3>
-                        <p>SEMAS - Secretaria Municipal de Assistência Social.</p>
+                        <h3>SEMAS</h3>
+                        <p>Secretaria Municipal de Assistência Social</p>
                     </div>
                 </div>
             </div>

@@ -1,26 +1,23 @@
-• INDEX
-	- Video institucional 
-
-• CAD_IDOSO
-	- Layout 
-	    - Formulário: OK 
-	    - Funcionalidade 
-• FREQUENCIA
-    - Falta arrumar a mensagem
-• LISTA_OFICINA
-    
-• LISTA_EVENTO
-
-• LISTA_CADASTRO 
-	- Layout 
-	- Funcionalidade:
-	     - Alterar: não funciona
-	     - Excluir: não funciona
-• LISTA_FRENQUENCIA
-	   
-• RELATORIO
-	- Layout 
-	- Funcionalidade 
+lista_frequencia.php 
+	- Colocar um bloqueio para evitar alteração de oficina para uma já cadastrada. 
+	- Exibir mensagem de excluido e alterado. 
+cad_idoso.php
+	- verificar se não exite duas pessoas com o mesmo CPF/ exibir mensagem
+lista_cadastro.php 
+	- Exibir mensagem de cadastrado com sucesso 
+alterar_idoso.php
+	- Exibir mensagem 
+excluir_idoso.php 
+	- Exibir mensagem
+lista_oficina.php
+	- estilos dos inputs 
+	- Exibir mensagem de cadastrado com sucesso/excluído 
+lista_evento.php
+	- estilos dos inputs
+	- Verificar o alterar
+	- Exibir mensagem de cadastrado com sucesso/excluído
+relatorio.php 
+	- verificar se a data inicial é maior que a final e apresentar uma mensagem.
 --------------------------------------------------------------------------------
 COMANDO BANCO DE DADOS
 - phpmyadmin-ctl install

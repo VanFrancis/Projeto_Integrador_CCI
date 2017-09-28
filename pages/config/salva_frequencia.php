@@ -4,6 +4,8 @@
             include('conexao.php');
         
         	if(isset($_POST["salvar"])){
+        		date_default_timezone_set('America/Porto_Velho');
+        		$dataLocal = date('d/m/Y H:i:s', time());
         		
 				$hora = date("H:m");
 				$data = date("Y-m-d");
@@ -24,7 +26,7 @@
 				$query = "INSERT INTO tb_frequencia (id_frequencia,data,hora,id_idoso,id_atividade,id_usuario) VALUES ('NULL', '$data','$hora','$id_idoso','$oficina','$usuario')"; 	
 				if(mysql_query($query,$conn)) {
 				
-				//Mensagem de Erro
+				//Mensagem 
 				$_SESSION['msg'] = "Frequência registrada com sucesso!";
 				header("Location:../frequencia.php");
 				}

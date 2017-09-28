@@ -38,10 +38,6 @@
 				$doenca_string = trim($doenca_string, ",");
 				$doenca=$doenca_string;
 				}
-				
-				//die(var_dump($doenca[0]));
-				
-		
 				$medicacao=$_POST['medicacao'];
 				$alergico=$_POST['alergico'];
 				$outra_enferm=$_POST['outra_enferm'];
@@ -58,7 +54,7 @@
 				/*Participação Familiar*/
 				$tarefa= $_POST['tarefa'];
 				$outra_tarefa=$_POST['outra_tarefa'];
-				$outro = $_POST['outro'];
+				$grupo=$_POST['grupo'];
 				$outro_parti = $_POST['outro_parti'];
 				/*Aspectos psicologicos*/
 				$psicologico = $_POST['psicologico'];
@@ -66,33 +62,36 @@
 				
 				/*Interesses e prefenrencias*/
 				$fisica_string="";
+				if($_POST['at_fisica']){
 				foreach ($_POST['at_fisica'] as $fisica) {
 					$fisica_string.=$fisica.',';
+					}
 				}
 				$fisica_string = trim($fisica_string, ",");
 				$at_fisica=$doenca_string;
-			
 				$socio_string="";
+				if($_POST['at_socio']){
 				foreach ($_POST['at_socio'] as $socio) {
 					$socio_string.=$socio.',';
+					}
 				}
 				$socio_string = trim($socio_string, ",");
 				$at_socio = $socio_string;
-			
+				
 			if (!$conn) 
-					die ("Erro de Conexão".mysql_error());
+				die ("Erro de Conexão".mysql_error());
 				$query = "INSERT INTO tb_idoso 
-				('id_idoso','nome','data_nascimento','sexo','religiao','uf','cidade','nacionalidade',
-				'cpf','rg','emissor','endereco','numero','bairro','trabalha','trab_onde','telefone',
-				'celular','nome_contato','parentesco','telefone_contato','doenca','medicacao','alergico',
-				'outra_enferm','plano','plan_qual','estado_civil','nivel_renda','origem_renda','escolaridade',
-				'reside','com_reside','num_redentes','tarefa','outra_tarefa','outro','outro_parti','psicologico',
-				'outro_psi','at_fisica','at_socio') VALUES ('NULL', '$nome','$data_nascimento','$sexo','$religiao',
-				'$uf','$cidade','$nacionalidade','$cpf','$rg','$emissor','$endereco','$numero','$bairro','$trabalha',
+				(id_idoso,nome,data_nascimento,sexo,religiao,uf,cidade,nacionalidade,
+				cpf,rg,emissor,endereco,numero,bairro,trabalha,trab_onde,telefone,
+				celular,nome_contato,parentesco,telefone_contato,doenca,medicacao,alergico,
+				outra_enferm,plano,plan_qual,estado_civil,nivel_renda,origem_renda,escolaridade,
+				reside,com_reside,num_redentes,tarefa,outra_tarefa,grupo,outro_parti,psicologico,
+				outro_psi,at_fisica,at_socio) VALUES ('NULL', '$nome','$data_nascimento','$sexo',
+				'$religiao', '$uf','$cidade','$nacionalidade','$cpf','$rg','$emissor','$endereco','$numero','$bairro','$trabalha',
 				'$trab_onde','$telefone','$celular','$nome_contato','$parentesco','$telefone_contato','$doenca',
 				'$medicacao','$alergico','$outra_enferm','$plano','$plan_qual','$estado_civil','$nivel_renda',
-				'$origem_renda','$escolaridade','$reside','$com_reside','$num_redentes','$tarefa','$outra_tarefa',
-				'$outro','$outro_parti','$psicologico','$outro_psi','$at_fisica','$at_socio')"; 	
+				'$origem_renda','$escolaridade','$reside','$com_reside','$num_redentes','$tarefa','$outra_tarefa','$grupo',
+				'$outro_parti','$psicologico','$outro_psi','$at_fisica','$at_socio')"; 	
 				if(!mysql_query($query,$conn)) die(mysql_error());
 			}
 				header("Location:../lista_cadastro.php");

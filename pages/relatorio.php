@@ -45,7 +45,8 @@
         <div class="row">
           <div>
             
-            <!--<button type="submit" class="btn btn-primary btn-md">Imprimir</button>-->
+            <button type="button" id="imprimir" class="btn btn-primary btn-md col-md-offset-11">Imprimir</button>
+            <div>&nbsp;</div>
             <table class="col-lg-12 table table-hover table-condensed table-bordered">
               <thead>
                 <tr>
@@ -53,9 +54,7 @@
                   <th>Nome</th>
                   <th>CPF</th>
                   <th>Oficina</th>
-                  <th>
-                    Data
-                  </th>
+                  <th> Data</th>
                   <th>Hora</th>
                 </tr>
               </thead>
@@ -106,7 +105,6 @@
               </tbody>
             </table>
           </div>
-          <a href="#" id="imprimir">Imprimir</a>
         </div>
       </div>
     <?php include('config/rodape.php'); ?>
